@@ -1,0 +1,9 @@
+{
+  "name": "Video",
+  "description": "Video player",
+  "component": "VideoComponent",
+  "package": "@solenopsys/ui-controls",
+  "io": {
+
+  }
+}

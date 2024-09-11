@@ -1,0 +1,14 @@
+{
+  "name": "UidFiled",
+  "description": "Uid field",
+  "package": "@solenopsys/ui-forms",
+  "component": "UidFiledComponent",
+  "io": {
+    "title": {
+      "directions": ["input"],
+      "type": "string"
+    }
+
+
+  }
+}

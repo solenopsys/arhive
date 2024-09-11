@@ -1,0 +1,12 @@
+replicasCount: 1
+fullName: "platform-ms-interactions"
+selectorLabel: "platform-ms-interactions"
+
+service:
+  port: 8080
+
+container:
+    name: interactions
+    image: registry.solenopsys.org/platform-ms-interactions
+    pullPolicy: Always
+

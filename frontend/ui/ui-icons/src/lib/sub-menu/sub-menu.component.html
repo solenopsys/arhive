@@ -1,0 +1,6 @@
+
+  <div *ngFor="let time of items"  style="padding: 5px;">
+    <a [routerLinkActive]="['active_link']"  [routerLink]="prefix+time.key">{{time.title}}</a>
+  </div>
+
+

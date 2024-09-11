@@ -1,0 +1,80 @@
+<div style="padding: 10px" *ngIf="config">
+  <h2>{{ config.title }}</h2>
+  <div *ngFor="let fieldConf of config.fields">
+    <div style="padding-top: 10px">
+      <img
+        *ngIf="ICONS[fieldConf.type]"
+        src="{{ ICONS[fieldConf.type] | baseDir }}"
+        style="height: 16px; padding-right: 5px; filter: var(--invertIcons)"
+      />
+      {{ fieldConf.title }}
+    </div>
+    <ng-container *ngIf="fieldConf.type !== EUID">
+      <ui-case-field
+        [config]="fieldConf"
+        [(data)]="data[fieldConf.key]"
+        (dataChange)="dataChange.emit(data)"
+      >
+      </ui-case-field>
+    </ng-container>
+
+    <ng-container *ngIf="fieldConf.type === EUID">
+      <div
+        *ngFor="let dataItem of data[fieldConf.key]; let i = index"
+        style="display: flex"
+      >
+        <ui-case-field
+          [config]="fieldConf"
+          [(data)]="data[fieldConf.key][i]"
+          (dataChange)="dataChange.emit(data)"
+        >
+        </ui-case-field>
+        <ng-container *ngIf="fieldConf.link.facets">
+          <ng-container *ngFor="let facet of fieldConf.link.facets">
+            <ng-container [ngSwitch]="facet?.type">
+              <ui-number-field
+                *ngSwitchCase="FT_NUMBER"
+                [width]="40"
+                style="
+                  padding-top: 10px;
+                  padding-bottom: 10px;
+                  padding-left: 10px;
+                "
+                [(value)]="
+                  data[fieldConf.key][i][fieldConf.key + '|' + facet.name]
+                "
+                (valueChange)="dataChange.emit(data)"
+              >
+              </ui-number-field>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+        <ui-icon-button
+          *ngIf="fieldConf.link.multiple"
+          icon="/assets/icons/01-Interface-Essential/43-Remove-Add/remove.svg"
+          title="Удалить"
+          style="padding-top: 10px"
+          (click)="deleteField(data,fieldConf.key,i)"
+        >
+        </ui-icon-button>
+      </div>
+      <ui-icon-button
+        *ngIf="fieldConf.link.multiple"
+        icon="/assets/icons/01-Interface-Essential/43-Remove-Add/add.svg"
+        title="Добавить"
+        (click)="addField(data, fieldConf.key)"
+      ></ui-icon-button>
+    </ng-container>
+  </div>
+
+  <div *ngFor="let view of config?.views">
+    <ui-data-view
+      [config]="view"
+      [data]="data[view.dataFrom]"
+    ></ui-data-view>
+  </div>
+
+  <div>
+    <ui-button (click)="save.emit()" [title]="'Сохранить'"></ui-button>
+  </div>
+</div>

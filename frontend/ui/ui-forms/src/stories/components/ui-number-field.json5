@@ -1,0 +1,14 @@
+{
+  "name": "NumberFiled",
+  "description": "Number field",
+  "package": "@solenopsys/ui-forms",
+  "component": "NumberFiledComponent",
+  "io": {
+    "title": {
+      "directions": ["input"],
+      "type": "string"
+    }
+
+
+  }
+}

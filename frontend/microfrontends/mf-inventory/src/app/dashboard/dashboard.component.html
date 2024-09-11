@@ -1,0 +1,5 @@
+<b>Integrated: {{len}}</b>
+
+<p *ngFor="let z of integrated">{{z.name}} <span *ngIf="z['rom.object'] as ob"> <ng-container *ngIf="ob.resourceType as rt">- {{rt }}</ng-container></span> </p>
+
+

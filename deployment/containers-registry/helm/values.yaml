@@ -1,0 +1,26 @@
+replicasCount: 1
+fullName: "containers-registry"
+selectorLabel: "containers-registry"
+
+domain: "registry.solenopsys.org"
+
+service:
+  port: 5000
+  nodePort: 31320
+  zmqPort: 9999
+
+storage:
+  volumeName: registry-vol
+  storageSize: 5Gi
+  accessModes: "ReadWriteOnce"
+
+containers:
+  registry:
+    name: registry
+    image: registry:2
+    pullPolicy: IfNotPresent
+  hs_adapter:
+    name: hs-adapter
+    image: registry.solenopsys.org/hs-http-adapter
+    pullPolicy: Always
+

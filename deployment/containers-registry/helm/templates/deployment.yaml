@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name:  {{ .Values.fullName }}
+spec:
+  serviceName: {{ .Values.fullName }}
+  replicas: {{ .Values.replicasCount }}
+  selector:
+    matchLabels:
+        app: {{ .Values.selectorLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.fullName}}
+        type: hStreamNode
+        hsServiceName: registry
+    spec:
+      containers:
+        - name: {{ .Values.containers.registry.name}}
+          image: {{ .Values.containers.registry.image}}
+          imagePullPolicy: {{ .Values.containers.registry.pullPolicy}}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+              name: http
+          volumeMounts:
+            - name:  {{ .Values.storage.volumeName }}
+              mountPath: /var/lib/registry
+        - name: {{ .Values.containers.hs_adapter.name}}
+          image: {{ .Values.containers.hs_adapter.image}}
+          imagePullPolicy: {{ .Values.containers.hs_adapter.pullPolicy}}
+          ports:
+            - containerPort: {{ .Values.service.zmqPort }}
+          env:
+            - name: "zmq.SocketUrl"
+              value: "tcp://*:{{ .Values.service.zmqPort }}"
+      terminationGracePeriodSeconds: 60
+      volumes:
+        - name: {{ .Values.storage.volumeName }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.storage.volumeName }}
+  updateStrategy:
+    type: RollingUpdate
+  volumeClaimTemplates:
+    - metadata:
+        name: {{ .Values.storage.volumeName }}
+        annotations:
+          volume.alpha.kubernetes.io/storage-class: anything
+      spec:
+        accessModes:
+          - {{ .Values.storage.accessModes }}
+        resources:
+          requests:
+            storage: {{ .Values.storage.storageSize }}

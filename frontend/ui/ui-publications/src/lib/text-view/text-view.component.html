@@ -1,0 +1,14 @@
+<div style="padding: 10px;">
+    @for (itemValue of blocks;track $index ) {
+        <div style="display: flex">
+            @if (itemValue.type === TN.PARAGRAPH ||
+            itemValue.type === TN.HEADER1 ||
+            itemValue.type === TN.HEADER2 ||
+            itemValue.type === TN.HEADER3) {
+                <div style="display: flex">
+                    <div [class]="itemValue.type">{{ itemValue.value }}</div>
+                </div>
+            }
+        </div>
+    }
+</div>

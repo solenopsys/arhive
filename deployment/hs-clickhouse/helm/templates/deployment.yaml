@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  {{ .Values.fullName }}
+spec:
+  replicas: {{ .Values.replicasCount }}
+  selector:
+    matchLabels:
+        app: {{ .Values.selectorLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.fullName}}
+        type: hStreamNode
+        hsServiceName:  {{ .Values.fullName}}
+    spec:
+      containers:
+        - name: {{ .Values.containers.hs_adapter.name}}
+          image: {{ .Values.containers.hs_adapter.image}}
+          imagePullPolicy: {{ .Values.containers.hs_adapter.pullPolicy}}
+          ports:
+            - containerPort: {{ .Values.service.zmqPort }}
+          env:
+            - name: "zmq.SocketUrl"
+              value: "tcp://*:{{ .Values.service.zmqPort }}"
+            - name: "clickhouse.Host"
+              value: "solenopsys-ds-clickhouse.default.svc.cluster.local"
+            - name: "clickhouse.Port"
+              value: "8123"
+            - name: "clickhouse.User"
+              value: "default"
+            - name: "clickhouse.Password"
+              value: ""
+      terminationGracePeriodSeconds: 60

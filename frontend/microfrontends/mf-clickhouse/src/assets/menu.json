@@ -1,0 +1,13 @@
+[{
+  "name":"Clickhouse",
+  "link":"/clickhouse",
+  "icon":"/assets/icons/11-Content/02-Books/book-book-pages.svg",
+  "items":[
+    {
+      "name":"Tables",
+      "link":"/clickhouse/tables",
+      "icon":"/assets/icons/11-Content/01-Content-Creation/content-write.svg"
+    }
+  ]
+}
+]

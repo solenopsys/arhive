@@ -1,0 +1,12 @@
+{
+  "name": "@solenopsys/ui-charts",
+  "version": "0.1.0",
+  "peerDependencies": {
+    "@solenopsys/ui-utils": "0.1.0",
+    "echarts": "^5.4.2",
+    "ngx-echarts": "^16.0.0"
+  },
+  "scripts": {
+    "build": "ng-packagr -p xs-package.json -c ../../../configurations/typescript/libraries.json"
+  }
+}

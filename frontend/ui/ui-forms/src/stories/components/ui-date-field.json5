@@ -1,0 +1,14 @@
+{
+  "name": "DateFiled",
+  "description": "Date field",
+  "package": "@solenopsys/ui-forms",
+  "component": "DateFiledComponent",
+  "io": {
+    "title": {
+      "directions": ["input"],
+      "type": "string"
+    }
+
+
+  }
+}

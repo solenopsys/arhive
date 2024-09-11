@@ -1,0 +1,13 @@
+[{
+  "name":"Postgresql",
+  "link":"/postgres",
+  "icon":"/assets/icons/11-Content/02-Books/book-book-pages.svg",
+  "items":[
+    {
+      "name":"Tables",
+      "link":"/postgres/tables",
+      "icon":"/assets/icons/11-Content/01-Content-Creation/content-write.svg"
+    }
+  ]
+}
+]

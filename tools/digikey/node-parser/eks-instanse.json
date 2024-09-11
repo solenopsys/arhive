@@ -1,0 +1,37 @@
+{
+  "family": "build-digikey-parser",
+  "taskRoleArn": "arn:aws:iam::466935361890:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::466935361890:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "digikey-parser",
+      "image": "registry.solenopsys.org/digikey-parser:latest",
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "build-dockers",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "ecs-digikey-parser"
+        },
+        "secretOptions": []
+      },
+      "cpu": 1024,
+      "memory": 2048,
+      "command": [
+      ],
+      "environment": [
+        {
+          "name": "CONTROLLER_API",
+          "value": "http://parser.solenopsys.org"
+        }
+      ]
+    }
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "1024",
+  "memory": "2048"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@solenopsys/build-federation",
+  "version": "0.1.39",
+  "description": "Build federation",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Solenopsys",
+  "peerDependencies": {
+    "@angular-devkit/build-angular": "^17.0.0",
+    "@angular/compiler-cli": "^17.0.0",
+    "@babel/core": "^7.22.11",
+    "@types/node": "^20.8.9"
+  },
+  "scripts": {
+    "build-index": " esbuild ./src/index.ts --bundle  --platform=node --outfile=dist/index.js --packages=external  && cp package.json dist/package.json ",
+    "pub": "pnpm build-index && pnpm publish dist --no-git-checks --access=public"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.23.2",
+    "esbuild": "0.19.5",
+    "ts-node": "^10.9.1",
+    "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "@angular-devkit/architect": "^0.1700.0",
+    "@angular-devkit/core": "^17.0.0",
+    "jsdom": "^22.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}

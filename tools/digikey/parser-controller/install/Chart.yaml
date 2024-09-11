@@ -1,0 +1,8 @@
+apiVersion: v2
+name: parser-controller
+version: 0.1.8
+description: Parser controller
+icon: "http://alexstorm.solenopsys.org/apps/assets/parser-controller.svg"
+appVersion: 1.0.0
+
+

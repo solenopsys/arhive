@@ -1,0 +1,20 @@
+{
+  "name": "Menu",
+  "description": "Menu component",
+  "package": "@solenopsys/ui-navigate",
+  "component": "MenuComponent",
+  "inputs": {
+    "logo": "string",
+    "alt": "string"
+  },
+  "stories": [
+    {
+      "name": "default",
+      "description": "Default",
+      "params": {
+        "logo": "assets/images/logo.png",
+        "alt": "Solenopsys"
+      }
+    }
+  ]
+}

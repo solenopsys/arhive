@@ -1,0 +1,31 @@
+[
+  {
+    "name":"Inventory",
+    "link":"/inventory",
+    "icon":"/assets/icons/10-Shipping-Delivery/01-Warehouse-Fullfilment/warehouse-packages.svg",
+    "items":[
+
+
+      {
+        "name":"Resources",
+        "link":"/inventory/resources",
+        "icon":"/assets/icons/11-Content/04-Archives/archive-locker-1.svg"
+      },
+      {
+        "name":"Types",
+        "link":"/inventory/resource_types",
+        "icon":"/assets/icons/01-Interface-Essential/41-Hierachy-Organization/hierarchy-6.svg"
+      },
+      {
+        "name":"Objects",
+        "link":"/inventory/objects",
+        "icon":"/assets/icons/02-Technology/06-3D-Printing/3d-box-corner.svg"
+      },
+      {
+        "name": "Statistic",
+        "link": "/inventory/stat",
+        "icon": "/assets/icons/06-Business-Products/12-Analytics/analytics-graph-bar-1.svg"
+      }
+    ]
+  }
+]

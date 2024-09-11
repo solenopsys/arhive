@@ -1,0 +1,13 @@
+{
+  "name": "@solenopsys/fl-dgraph",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "ng-packagr -p xs-package.json -c ../../../configurations/typescript/libraries.json"
+  },
+  "noPeerDependencies": [
+  ],
+  "peerDependencies": {
+    "number-generator": "^4.0.6",
+    "@solenopsys/fl-hyperstreams": "^0.1.0"
+  }
+}

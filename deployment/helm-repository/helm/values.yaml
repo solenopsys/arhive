@@ -1,0 +1,26 @@
+replicasCount: 1
+fullName: "helm-registry"
+selectorLabel: "helm-registry"
+
+domain: "helm.solenopsys.org"
+
+service:
+  port: 8080
+  nodePort: 30880
+  zmqPort: 9999
+
+storage:
+  volumeName: helmdir
+  storageSize: 500Mi
+  accessModes: "ReadWriteOnce"
+
+containers:
+  chartmuseum:
+    name: chartmuseum
+    image: bitnami/chartmuseum:latest
+    pullPolicy: IfNotPresent
+  hs_adapter:
+    name: hs-adapter
+    image: registry.solenopsys.org/hs-http-adapter
+    pullPolicy: Always
+

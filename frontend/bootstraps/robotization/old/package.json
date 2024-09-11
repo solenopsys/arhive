@@ -1,0 +1,36 @@
+{
+  "name": "@solenopsys/fr-robotization",
+  "version": "0.1.1",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite ",
+    "build": "vite build",
+    "start": "vite preview ",
+    "serve-old": "ng serve",
+    "build-old": "ng build",
+    "shema gen": "json-schema-to-typescript --no-top-ref src/assets/iusb-shema.json --out src/types.ts"
+  },
+
+  "dependencies": {
+    "@angular/common": "^16.1.5",
+    "@angular/compiler": "^16.1.5",
+    "@angular/core": "^16.1.5",
+    "@angular/platform-browser": "^16.1.5",
+    "@angular/platform-browser-dynamic": "^16.1.5",
+    "@angular/router": "^16.1.5",
+    "rxjs": "^7.8.1",
+    "zone.js": "^0.13.1",
+    "canvas-txt": "^3.0.0",
+    "three": "^0.153.0",
+    "@types/three": "^0.153.0"
+  },
+  "devDependencies": {
+    "json-schema-to-typescript": "^13.0.2",
+    "sass": "^1.63.6",
+    "typescript": "5.1.6",
+    "vite": "^4.4.4"
+
+  }
+
+}

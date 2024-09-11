@@ -1,0 +1,29 @@
+replicasCount: 1
+fullName: "solenopsys-ds-dgraph"
+selectorLabel: "solenopsys-ds-dgraph"
+
+service:
+  nodePort: 30080
+  zmqPort: 9999
+
+storage:
+  volumeName: dgraph-volume
+  volumeClimeName: dgraph-pvc
+  storageSize: 1Gi
+  accessModes: "ReadWriteOnce"
+  hostPath: "/opt/dgraph-volume"
+  storageClass: "local-path"
+
+containers:
+  dgraph_zero:
+    name: zero
+    grpcPort: 5080
+    httpPort: 6080
+    image: registry.solenopsys.org/solenopsys-ds-dgraph # dgraph/standalone:v20.11.2
+    pullPolicy: IfNotPresent
+  dgraph_alpha:
+    name: alpha
+    grpcPort: 9080
+    httpPort: 8080
+    image: registry.solenopsys.org/solenopsys-ds-dgraph # dgraph/standalone:v20.11.2
+    pullPolicy: IfNotPresent

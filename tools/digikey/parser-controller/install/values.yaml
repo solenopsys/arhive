@@ -1,0 +1,14 @@
+replicasCount: 1
+fullName: "parser-controller"
+selectorLabel: "parser-controller"
+
+domain: "parser.solenopsys.org"
+
+service:
+  port: 8080
+
+container:
+  name: controller
+  image: registry.solenopsys.org/parser-controller:latest
+  pullPolicy: Always
+

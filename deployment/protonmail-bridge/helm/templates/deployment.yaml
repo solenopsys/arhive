@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.fullName}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app:  {{ .Values.selectorLabel }}
+  template:
+    metadata:
+      labels:
+        app:  {{ .Values.fullName }}
+    spec:
+      containers:
+        - name: {{ .Values.container.name }}
+          image:  {{ .Values.container.image }}
+          volumeMounts:
+            - name: config-volume
+              mountPath: /config
+          ports:
+            - containerPort: {{ .Values.service.smtp }}
+              name: smtp
+              protocol: TCP
+            - containerPort: {{ .Values.service.imap }}
+              name: imap
+              protocol: TCP
+      volumes:
+        - name: config-volume
+          configMap:
+            name: {{ .Values.selectorLabel }}

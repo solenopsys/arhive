@@ -1,0 +1,8 @@
+{
+  "name": "@solenopsys/mf-dgraph",
+  "version": "0.1.0",
+   "scripts": {
+    "build": "vite build  -c ../../../lib.config.js"
+  },
+  "type": "module"
+}

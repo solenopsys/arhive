@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+
+option go_package = "./main";
+
+message GetReposRequest {
+  string filter = 1;
+}
+
+message Repo {
+  string name = 1;
+  string url = 2;
+}
+
+message AddRepoRequest {
+  string name = 1;
+  string url = 2;
+}
+
+message RemoveRepoRequest {
+  string url = 1;
+}
+
+message ReposResponse{
+  repeated Repo repos = 1;
+}
+
+message OperationStatus{
+  bool status = 1;
+}
+
+message GetChartsRequest {
+  bool reload = 1;
+  string filter = 2;
+}
+
+message ChartsResponse{
+  repeated Chart charts = 1;
+}
+
+
+
+
+message Chart{
+  string name = 1;
+  string version = 2;
+  string description = 3;
+  string icon = 4;
+  string created = 5;
+  string digest = 6;
+  string repo = 7;
+}
+
+
+

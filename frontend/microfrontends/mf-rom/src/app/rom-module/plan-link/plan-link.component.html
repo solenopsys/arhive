@@ -1,0 +1,21 @@
+<div style="display: flex" *ngIf="this.type">
+    <input
+            type="number" min="1"
+            style="width: 50px;min-width: 50px;"
+            [(ngModel)]="value.count"
+            (ngModelChange)="changeSize($event)">
+     ----
+
+
+    <ui-icon-button
+            icon="/assets/icons/01-Interface-Essential/43-Remove-Add/remove-bold.svg"
+            title="Удалить"
+            (click)="remove()">
+    </ui-icon-button>
+    <ui-icon-button
+            icon="/assets/icons/01-Interface-Essential/04-Login-Logout/logout.svg"
+            title="Перейти"
+            (click)="go()">
+    </ui-icon-button>
+
+</div>

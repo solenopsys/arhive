@@ -1,0 +1,13 @@
+{
+  "name": "@solenopsys/mf-postgres",
+  "version": "0.1.0",
+   "scripts": {
+    "build": "vite build  -c ../../../lib.config.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "@solenopsys/ui-templates": "^0.1.0",
+    "@solenopsys/fl-dgraph": "^0.1.0",
+    "@solenopsys/fl-hyperstreams": "^0.1.0"
+  }
+}

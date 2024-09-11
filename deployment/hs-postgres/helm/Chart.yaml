@@ -1,0 +1,8 @@
+apiVersion: v2
+name: alexstorm-hsm-postgres
+version: 0.1.2
+description: Postgresql hs data service
+icon: "http://solenopsys.org/apps/assets/alexstorm-hsm-postgres.svg"
+appVersion: 1.0.0
+
+

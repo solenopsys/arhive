@@ -1,0 +1,11 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: ms-protonmail-bridge
+  namespace: kube-system
+spec:
+  chart: ms-protonmail-bridge
+  targetNamespace: default
+  version: 0.1.2
+  repo: https://helm.solenopsys.org
+  helmVersion: v3

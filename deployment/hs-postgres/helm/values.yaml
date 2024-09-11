@@ -1,0 +1,14 @@
+replicasCount: 1
+fullName: "alexstorm-hsm-postgres"
+selectorLabel: "alexstorm-hsm-postgres"
+
+service:
+  port: 5432
+  zmqPort: 9999
+
+containers:
+  hs_adapter:
+    name: hs-postgres
+    image: registry.solenopsys.org/alexstorm-hsm-postgres
+    pullPolicy: Always
+

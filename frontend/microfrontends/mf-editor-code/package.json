@@ -1,0 +1,13 @@
+{
+  "name": "@solenopsys/mf-editor-code",
+  "version": "0.0.1",
+  "dependencies": {
+    "monaco-editor": "^0.41.0",
+    "ngx-monaco-editor-v2": "^16.0.0",
+    "@solenopsys/ui-templates": "^0.1.0",
+    "@solenopsys/ui-utils": "^0.1.0"
+  },
+  "scripts": {
+    "build": "ng-packagr -p xs-package.json -c ../../../../tsconfig.packages.json"
+  }
+}

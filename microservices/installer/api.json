@@ -1,0 +1,22 @@
+{
+  "ver": "1.22.2",
+  "name": "hs-installer-api",
+  "proto": "api.proto",
+  "methods": {
+    "getInstalled": {
+      "fuc": 1,
+      "request": "GetInstalledRequest",
+      "response": "ChartsResponse"
+    },
+    "installChart": {
+      "fuc": 2,
+      "request": "InstallChartRequest",
+      "response": "OperationStatus"
+    },
+    "uninstallChart": {
+      "fuc": 3,
+      "request": "UninstallChartRequest",
+      "response": "OperationStatus"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Quality",
+    "link": "/quality",
+    "icon": "/assets/icons/22-Social-Medias-Rewards-Rating/06-Rating/rating-star-winner.svg",
+    "items": [
+      {
+        "name": "Bugs",
+        "link": "/quality/bugs",
+        "icon": "/assets/icons/04-Programing-Apps-Websites/05-Bug-Security/computer-bug-1.svg"
+      },
+      {
+        "name": "Improvements",
+        "link": "/quality/todos",
+        "icon": "/assets/icons/01-Interface-Essential/50-Navigate/navigation-right-2.svg"
+      },
+      {
+        "name":"Scopes",
+        "link":"/quality/scopes",
+        "icon":"/assets/icons/11-Content/01-Content-Creation/content-pencil-write.svg"
+      }
+    ]
+  }
+]

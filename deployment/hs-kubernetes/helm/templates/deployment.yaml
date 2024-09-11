@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.fullName }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.selectorLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.fullName }}
+        type: hStreamNode
+        hsServiceName:  {{ .Values.hsServiceName }}
+    spec:
+      containers:
+        - name:  {{ .Values.containers.router.name}}
+          image: {{ .Values.containers.router.image}}
+          ports:
+            - containerPort: {{ .Values.containers.router.zmqPort}}
+          env:
+            - name: "zmq.SocketUrl"
+              value: "tcp://*:{{ .Values.containers.router.zmqPort}}"

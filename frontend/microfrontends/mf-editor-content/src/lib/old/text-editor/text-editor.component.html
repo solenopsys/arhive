@@ -1,0 +1,26 @@
+<div>
+  <ng-container *ngIf="fragment$ | async; let fragment ">
+  <h1>{{fragment.name}}</h1>
+
+  <div style="height: 1000px">
+    <div style="overflow-y: scroll; height: 70%;">
+      <ui-graph-text  [groupID]="groupId"></ui-graph-text>
+    </div>
+
+    <br>
+    <ng-container *ngIf=" this.nodesGroup$ |async; let group">
+      <button *ngIf="group.edited" (click)="saveValues()">Сохранить</button>
+    </ng-container>
+
+  </div>
+
+  <h3>Версии</h3>
+  <!--    <ui-icon-button icon="/assets/icons/01-Interface-Essential/40-Keyboard/keyboard-arrow-left.svg"></ui-icon-button>-->
+  <!--    <ui-icon-button icon="/assets/icons/01-Interface-Essential/40-Keyboard/keyboard-arrow-right.svg"></ui-icon-button>-->
+
+    <div *ngFor="let ver of fragment.versions" style="font-size: 10px;padding: 5px;">
+      <a [routerLink]="'../'+ver.uid"
+         [ngStyle]="{fontWeight:ver.uid===versionId?'bolder':'normal'}">{{ver.version_date}}</a>
+    </div>
+  </ng-container>
+</div>

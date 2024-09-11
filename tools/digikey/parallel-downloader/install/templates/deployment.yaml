@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name:  {{ .Values.fullName }}
+spec:
+  serviceName:  {{ .Values.fullName }}
+  replicas: 1
+  selector:
+    matchLabels:
+      app:  {{ .Values.selectorLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.fullName }}
+    spec:
+      containers:
+        - name: {{ .Values.container.name }}
+          image: {{ .Values.container.image }}
+          imagePullPolicy:  {{ .Values.container.pullPolicy }}
+          volumeMounts:
+            - name: {{ .Values.storage.volumeName }}
+              mountPath: /downloads
+          env:
+            - name: CONTROLLER_URL
+              value: {{ .Values.parserUrl }}
+            - name: DATA_DIR
+              value: "/downloads"
+            - name: THREADS
+              value: "{{ .Values.threads }}"
+            - name: FEED_PAUSE
+              value: "{{ .Values.feedPauseMils }}"
+
+      volumes:
+        - name: {{ .Values.storage.volumeName }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.storage.volumeClimeName }}
+

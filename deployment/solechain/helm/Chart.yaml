@@ -1,0 +1,8 @@
+apiVersion: v2
+name: solechain-node
+version: 0.1.9
+description: Solechain Service
+icon: "http://solenopsys.org/apps/assets/solechain.svg"
+appVersion: 1.0.0
+
+

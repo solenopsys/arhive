@@ -1,0 +1,10 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: solechain-spn
+  namespace: kube-system
+spec:
+  chart: solechain-spn
+  targetNamespace: platform
+  version: 0.1.8
+  repo: https://helm.solenopsys.org

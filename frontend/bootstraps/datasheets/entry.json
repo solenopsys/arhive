@@ -1,0 +1,13 @@
+{
+  "layout": {
+    "module":"@solenopsys/mf-layout",
+    "data": {
+      "logo": "/endpoints/solenopsys/fr-datasheets/assets/logo.svg",
+      "favicon": "/endpoints/solenopsys/fr-datasheets/assets/favicon.svg",
+      "title": "Datasheets"
+    }
+  },
+  "routes": {
+
+  }
+}

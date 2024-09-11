@@ -1,0 +1,8 @@
+apiVersion: v2
+name: parallel-downloader
+version: 0.1.5
+description: Parallel files downloader for site parser
+icon: "http://alexstorm.solenopsys.org/apps/assets/parallel-downloader.svg"
+appVersion: 1.0.0
+
+

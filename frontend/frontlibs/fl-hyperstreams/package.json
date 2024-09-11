@@ -1,0 +1,15 @@
+{
+  "name": "@solenopsys/fl-hyperstreams",
+  "version": "0.1.0",
+  "dependencies": {
+
+  },
+  "peerDependencies": {
+    "json5": "^2.2.3",
+    "@solenopsys/fl-clusters": "^0.1.0",
+    "number-generator": "^4.0.6"
+  },
+  "scripts": {
+    "build": "ng-packagr -p xs-package.json -c ../../../configurations/typescript/libraries.json"
+  }
+}

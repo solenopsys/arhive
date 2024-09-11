@@ -1,0 +1,7 @@
+syntax = "proto3";
+package solechain.solechain;
+
+option go_package = "solechain/x/solechain/types";
+
+// Msg defines the Msg service.
+service Msg {}

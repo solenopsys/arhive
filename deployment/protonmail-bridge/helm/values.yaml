@@ -1,0 +1,18 @@
+replicasCount: 1
+fullName: "ms-protonmail-bridge"
+selectorLabel: "ms-protonmail-bridge"
+
+service:
+  imap: 143
+  smtp: 25
+
+container:
+  name: protonmail-bridge
+  image: shenxn/protonmail-bridge
+  pullPolicy: IfNotPresent
+
+
+login:
+    username: "your protonmail username"
+    password: "your protonmail password"
+    decryption_password: "your protonmail decryption password"

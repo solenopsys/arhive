@@ -1,0 +1,21 @@
+replicasCount: 1
+fullName: "ms-ipfs-revproxy"
+selectorLabel: "ms-ipfs-revproxy"
+
+service:
+  port: 80
+
+container:
+  name: revproxy
+  image: registry.solenopsys.org/solenopsys/ms-ipfs-revproxy
+  pullPolicy: Always
+  serviceAccount: "hc-infra"
+
+ipfsBacks: alpha.node.solenopsys.org bravo.node.solenopsys.org charlie.node.solenopsys.org
+
+domainList:
+  solenopsys.org: https://zero.node.solenopsys.org/ipns/k51qzi5uqu5dkv3b4w943k47xdgslacbxr2cpw75atfe36fqmoqisbc576jeme
+  auth.solenopsys.org: https://zero.node.solenopsys.org/ipns/k51qzi5uqu5dj23tiy35r6mkpdovejjxiq3oa8hglk2kfnzjtpqpohj96lfm5y
+  converged.solenopsys.org: https://zero.node.solenopsys.org/ipfs/QmaXkKartzjQwKZCchxnFT1ALxtcBV9UH7eA9K5U2iCNXG
+  uimatrix.solenopsys.org: https://zero.node.solenopsys.org/ipfs/QmX374s4EKeF57rMAkyJmgxqmPHUcBNET4eHMqpi7G5dGj
+  robotization.vc: https://zero.node.solenopsys.org/ipfs/QmbqxxhWC1Zi7ne4Qimrmphi4RyFyCH4eRTUznpPUd8HSk

@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Values.fullName }}
+  labels:
+    app: {{ .Values.fullName }}
+spec:
+  serviceName: {{ .Values.fullName }}
+  replicas: {{ .Values.replicasCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.fullName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.fullName }}
+    spec:
+      volumes:
+        - name: {{ .Values.storage.staging.volumeName }}
+          hostPath:
+            path: /opt/ipfs-staging
+            type: Directory
+        - name: {{ .Values.storage.data.volumeName }}
+          hostPath:
+            path: /opt/ipfs-data
+            type: Directory
+        - name: swarm-volume
+          configMap:
+            name: swarm-key
+            items:
+              - key: swarm.key
+                path: swarm.key
+        - name: bootstrap-volume
+          configMap:
+            name: ipfs-bootstrap
+            items:
+              - key: bootstrap.sh
+                path: bootstrap.sh
+      containers:
+        - image: {{ .Values.containers.kobo.image }}
+          env:
+            - name: LIBP2P_FORCE_PNET
+              value: "1"
+          name: {{ .Values.containers.kobo.name }}
+          imagePullPolicy: {{ .Values.containers.kobo.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.p2p }}
+            - containerPort: {{ .Values.service.gateway }}
+            - containerPort: {{ .Values.service.rpc }}
+          volumeMounts:
+            - name: {{ .Values.storage.staging.volumeName }}
+              mountPath: /export
+            - name: {{ .Values.storage.data.volumeName }}
+              mountPath: /data/ipfs
+            - name: swarm-volume
+              mountPath: /data/ipfs/swarm.key
+              subPath: swarm.key
+              readOnly: true
+            - name: bootstrap-volume
+              mountPath: /container-init.d/bootstrap.sh
+              subPath: bootstrap.sh
+              readOnly: true
+  updateStrategy:
+    type: RollingUpdate
+  volumeClaimTemplates:
+    - metadata:
+        name:  {{ .Values.storage.staging.volumeName }}
+        annotations:
+          volume.alpha.kubernetes.io/storage-class: anything
+      spec:
+        accessModes:
+          - {{ .Values.storage.staging.accessModes }}
+        resources:
+          requests:
+            storage: {{ .Values.storage.staging.storageSize }}
+    - metadata:
+        name: {{ .Values.storage.data.volumeName }}
+        annotations:
+          volume.alpha.kubernetes.io/storage-class: anything
+      spec:
+        accessModes:
+          - {{ .Values.storage.data.accessModes }}
+        resources:
+          requests:
+            storage: {{ .Values.storage.data.storageSize }}

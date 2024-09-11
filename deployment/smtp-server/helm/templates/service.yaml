@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Values.fullName}}
+  labels:
+    app:  {{ .Values.selectorLabel }}
+spec:
+  selector:
+    app: {{ .Values.selectorLabel }}
+  ports:
+    - name: smtp-auth
+      port: {{ .Values.ports.service.smtp }}
+      targetPort: {{ .Values.ports.pod.smtp }}

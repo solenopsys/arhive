@@ -1,0 +1,25 @@
+{
+  "name": "@solenopsys/mf-auth",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "xs-pack"
+  },
+  "type": "module",
+  "shared": [
+
+  ],
+  "dependencies": {
+    "@solenopsys/fl-crypto": "^0.1.0",
+    "@solenopsys/fl-globals": "^0.1.0",
+    "@solenopsys/fl-storage": "^0.1.0",
+    "@solenopsys/ui-controls": "^0.1.0",
+    "@solenopsys/ui-forms": "^0.1.0",
+    "@solenopsys/ui-navigate": "^0.1.2",
+    "@solenopsys/ui-qr": "^0.1.0",
+    "@solenopsys/ui-templates": "^0.1.0",
+    "@solenopsys/ui-utils": "^0.1.0"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "^17.0.0"
+  }
+}

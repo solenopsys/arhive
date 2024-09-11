@@ -1,0 +1,18 @@
+replicasCount: 1
+fullName: "ms-smtp-server"
+selectorLabel: "ms-smtp-server"
+
+
+ports:
+  pod:
+    smtpSecure: 8465
+    smtp: 8025
+  service:
+    smtpSecure: 465
+    smtp: 25
+
+mailHost: "smtp.solenopsys.org"
+container:
+  name: router
+  image: registry.solenopsys.org/solenopsys-mail
+  pullPolicy: Always

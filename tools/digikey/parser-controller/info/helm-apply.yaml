@@ -1,0 +1,11 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name:  parser-controller
+  namespace: kube-system
+spec:
+  chart:  parser-controller
+  targetNamespace: default
+  version: 0.1.5
+  repo: https://helm.solenopsys.org
+  helmVersion: v3

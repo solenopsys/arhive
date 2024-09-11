@@ -1,0 +1,9 @@
+{
+  "name": "SelectSave",
+  "description": "Select width save",
+  "component": "SelectSaveComponent",
+  "package": "@solenopsys/ui-controls",
+  "io": {
+
+  }
+}

@@ -1,0 +1,8 @@
+apiVersion: v2
+name: ms-smtp-server
+version: 0.1.10
+description: Mail server exim
+icon: "http://solenopsys.org/apps/assets/solenopsys-postfix.svg"
+appVersion: 1.0.0
+
+

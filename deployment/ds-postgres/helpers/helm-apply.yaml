@@ -1,0 +1,11 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name:  solenopsys-ds-postgres
+  namespace: kube-system
+spec:
+  chart:  solenopsys-ds-postgres
+  targetNamespace: default
+  version: 0.1.6
+  repo: https://helm.solenopsys.org
+  helmVersion: v3

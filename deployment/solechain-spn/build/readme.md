@@ -1,0 +1,1 @@
+nerdctl build --platform=amd64  --progress=plain --output type=image,name=registry.solenopsys.org/solechain-spn:latest,push=true .

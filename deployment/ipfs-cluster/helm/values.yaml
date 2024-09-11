@@ -1,0 +1,29 @@
+replicasCount: 1
+fullName: "ipfs-cluster-node"
+selectorLabel: "ipfs-cluster-node"
+ipfsServiceName: "ipfs-node"
+
+service:
+  p2p: 9096
+  rest: 9094
+
+storage:
+  data:
+    volumeName: data-vol
+    storageSize: 1Gi
+    accessModes: "ReadWriteOnce"
+
+containers:
+  kobo:
+    name: cluster-node
+    image: ipfs/ipfs-cluster
+    pullPolicy: IfNotPresent
+
+peerName: "default-peer-name"
+
+sharedSecret: "d17142e629749515ebf23c56de08a25f0a19c5218ef079a38f27c1219275a0dd" # test only
+
+bootstrap:
+  - "/dns4/alpha-ipfs-cluster-node-service.default.svc.cluster.local/tcp/9096/ipfs/12D3KooWDrevkZ21E7gRqHoXNdCdvmvg1EQP3peRxmG1pLtoTDbB"
+  - "/dns4/bravo-ipfs-cluster-node-service.default.svc.cluster.local/tcp/9096/ipfs/12D3KooWRuNw3ZUZeM9b2ay6ERyUu87ujuJNQXmmeEP3YeZPmsrU"
+  - "/dns4/charlie-ipfs-cluster-node-service.default.svc.cluster.local/tcp/9096/ipfs/12D3KooWNunVyq2T8UHLJno5Xq65Z24WcZkyJLPtaBNyxYHz3kYM"

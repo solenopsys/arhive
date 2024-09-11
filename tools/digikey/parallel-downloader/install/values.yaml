@@ -1,0 +1,20 @@
+replicasCount: 1
+fullName: "parallel-downloader"
+selectorLabel: "parallel-downloader"
+
+container:
+  name: downloader
+  image: registry.solenopsys.org/parallel-downloader:latest
+  pullPolicy: Always
+
+parserUrl:  "http://parser.solenopsys.org"
+threads: "20"
+feedPauseMils: "100"
+
+storage:
+  volumeName: downloads-volume
+  volumeClimeName: downloads-pvc
+  storageSize: 125Gi
+  accessModes: "ReadWriteOnce"
+  hostPath: "/opt/downloads"
+  storageClass: "local-path"

@@ -1,0 +1,11 @@
+{
+  "name": "ButtonGroup",
+  "description": "Button group for commands",
+  "component": "ButtonGroupComponent",
+  "package": "@solenopsys/ui-controls",
+  "io": {
+    actions: [
+
+    ],
+  }
+}

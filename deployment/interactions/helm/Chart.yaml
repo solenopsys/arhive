@@ -1,0 +1,8 @@
+apiVersion: v2
+name: platform-ms-interactions
+version: 0.1.0
+description: Pinning service
+icon: "http://solenopsys.org/apps/assets/platform-ms-interactions.svg"
+appVersion: 1.0.0
+
+

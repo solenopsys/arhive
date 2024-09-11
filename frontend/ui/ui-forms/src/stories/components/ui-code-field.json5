@@ -1,0 +1,14 @@
+{
+  "name": "CodeFiled",
+  "description": "Code field",
+  "package": "@solenopsys/ui-forms",
+  "component": "CodeFiledComponent",
+  "io": {
+    "title": {
+      "directions": ["input"],
+      "type": "string"
+    }
+
+
+  }
+}

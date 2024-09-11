@@ -1,0 +1,26 @@
+<div style="display: flex;">
+<!--    <div style="width: 350px;">-->
+<!--        <app-plan-links-group-->
+<!--                [value]="value"-->
+<!--                [ioType]="'in'"-->
+<!--                [type]="oppositeType"-->
+<!--                [goalId]="goalId">-->
+<!--        </app-plan-links-group>-->
+<!--    </div>-->
+    <div style="width: 300px;display: flex;">
+        <app-linked-field
+                (createNewItem)="newItem($event)"
+                [provider]="resourceProvider"
+                [value$]="value$">
+        </app-linked-field>
+    </div>
+<!--    <div style="width: 350px;">-->
+<!--        <app-plan-links-group-->
+<!--                [value]="value"-->
+<!--                [ioType]="'out'"-->
+<!--                [type]="oppositeType"-->
+<!--                [goalId]="goalId">-->
+<!--        </app-plan-links-group>-->
+<!--    </div>-->
+</div>
+

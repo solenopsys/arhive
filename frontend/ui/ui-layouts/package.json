@@ -1,0 +1,11 @@
+{
+  "name": "@solenopsys/ui-layouts",
+  "version": "0.1.0",
+  "peerDependencies": {
+    "@solenopsys/ui-icons": "0.1.0",
+    "@solenopsys/ui-utils": "0.1.0"
+  },
+  "scripts": {
+    "build": "ng-packagr -p xs-package.json -c ../../../configurations/typescript/libraries.json"
+  }
+}

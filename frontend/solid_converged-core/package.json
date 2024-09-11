@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "name": "@solenopsys/converged",
+  "dependencies": {
+    "capnp-ts": "^0.7.0",
+    "hyperscript": "^2.0.2",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@happy-dom/global-registrator": "^13.3.8",
+    "@types/bun": "latest"
+  }
+}

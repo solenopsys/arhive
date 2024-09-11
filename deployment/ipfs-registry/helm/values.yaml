@@ -1,0 +1,13 @@
+replicasCount: 1
+fullName: "ipfs-containers-registry"
+selectorLabel: "ipfs-containers-registry"
+
+service:
+  port: 5000
+
+containers:
+  registry:
+    name: registry
+    image: registry:2
+    pullPolicy: IfNotPresent
+

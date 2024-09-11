@@ -1,0 +1,14 @@
+{
+  "name": "MultilineFiled",
+  "description": "Multiline field",
+  "package": "@solenopsys/ui-forms",
+  "component": "MultilineFiledComponent",
+  "io": {
+    "title": {
+      "directions": ["input"],
+      "type": "string"
+    }
+
+
+  }
+}

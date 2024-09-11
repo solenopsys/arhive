@@ -1,0 +1,28 @@
+[{
+  "name":"Kubernetes",
+  "link":"/kubernetes",
+  "icon":"/assets/icons/11-Content/02-Books/book-book-pages.svg",
+  "items":[
+    {
+      "name":"Pods",
+      "link":"/kubernetes/pods",
+      "icon":"/assets/icons/11-Content/01-Content-Creation/content-write.svg"
+    },
+    {
+      "name":"RoutePods",
+      "link":"/kubernetes/route_pods",
+      "icon":"/assets/icons/11-Content/01-Content-Creation/content-write.svg"
+    },
+    {
+      "name":"Nodes",
+      "link":"/kubernetes/nodes",
+      "icon":"/assets/icons/11-Content/01-Content-Creation/content-write.svg"
+    },
+    {
+      "name":"Pods Top",
+      "link":"/kubernetes/top_pods",
+      "icon":"/assets/icons/11-Content/01-Content-Creation/content-write.svg"
+    }
+  ]
+}
+]

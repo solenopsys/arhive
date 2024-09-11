@@ -1,0 +1,29 @@
+<div>
+    <h3>  {{(value$ |async).title}}</h3>
+    <div style="display: flex;">
+        <div style="width: 350px;">
+
+
+            <app-plan-links-group
+                    [title]="'Входящие'"
+                    [linkedId]=" (this.value$  | async)?.id"
+                    [direction]="DIR.in"
+                    [type]="TYPES.resource"
+                    [provider]="resourceProvider"
+            >
+            </app-plan-links-group>
+        </div>
+        <div style="width: 350px;">
+
+            <app-plan-links-group
+                    [title]="'Исходящие'"
+                    [linkedId]=" (this.value$  | async)?.id"
+                    [direction]="DIR.out"
+                    [type]="TYPES.resource"
+                    [provider]="resourceProvider"
+            >
+            </app-plan-links-group>
+        </div>
+    </div>
+</div>
+

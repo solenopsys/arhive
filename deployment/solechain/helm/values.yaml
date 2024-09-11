@@ -1,0 +1,26 @@
+replicasCount: 1
+fullName: "solechain-node"
+selectorLabel: "solechain-node"
+
+spn-host: "spn.solenopsys.org"
+
+service:
+  rpcPort: 26657
+  tendermintPort: 26660
+  p2pPort: 26656
+  blockchainApiPort: 1317
+
+storage:
+  volumeName: solechain-node-volume
+  volumeClimeName: solechain-node-pvc
+  storageSize: 1Gi
+  accessModes: "ReadWriteOnce"
+  hostPath: "/opt/solechain-node-volume"
+  storageClass: "local-path"
+
+containers:
+  solechain_node:
+    name: node
+    image: registry.solenopsys.org/solechain-node:latest
+    pullPolicy: IfNotPresent
+

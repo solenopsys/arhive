@@ -1,0 +1,14 @@
+{
+  "name": "FileFiled",
+  "description": "File field",
+  "package": "@solenopsys/ui-forms",
+  "component": "FileFiledComponent",
+  "io": {
+    "title": {
+      "directions": ["input"],
+      "type": "string"
+    }
+
+
+  }
+}

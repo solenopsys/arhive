@@ -1,0 +1,8 @@
+apiVersion: v2
+name: ms-protonmail-bridge
+version: 0.1.2
+description: Protonmail bridge
+icon: "http://solenopsys.org/apps/assets/proton-node.svg"
+appVersion: 1.0.0
+
+

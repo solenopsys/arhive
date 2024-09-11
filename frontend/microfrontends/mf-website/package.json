@@ -1,0 +1,18 @@
+{
+  "name": "@solenopsys/mf-website",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "xs-pack"
+  },
+  "devDependencies": {
+    "json5": "^2.2.3"
+  },
+  "dependencies": {
+    "@solenopsys/fl-globals": "^0.1.0",
+    "@solenopsys/fl-storage": "^0.1.0",
+    "@solenopsys/ui-forms": "^0.1.0",
+    "@solenopsys/ui-navigate": "^0.1.0",
+    "@solenopsys/ui-publications": "^0.1.0",
+    "@solenopsys/ui-templates": "^0.1.0"
+  }
+}

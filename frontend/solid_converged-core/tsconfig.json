@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "jsxImportSource": "@solenopsys/converged",
+    "strict": false,
+    "noEmit": true,
+    "isolatedModules": true,
+    "baseUrl": "./",
+    "paths": {
+      "@solenopsys/converged/jsx-dev-runtime":["./src/converged/renderer/index.ts"],
+      "@solenopsys/converged/jsx-runtime":["./src/converged/renderer/index.ts"]
+    }
+  }
+}

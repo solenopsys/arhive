@@ -1,0 +1,8 @@
+<h3>Неначатые процессы</h3>
+<p *ngFor="let pz of this.processes">{{pz['rom.process']}} <b style="cursor: pointer"
+                                                              (click)="start(pz['uid'],pz['rom.process'])">start</b></p>
+<h3>Активные процессы</h3>
+<p *ngFor="let pz of this.active">{{pz['rom.process']}}    <b style="cursor: pointer"
+                                                            (click)="end(pz['uid'])">end</b></p>
+<h3>Законченные процессы</h3>
+<p *ngFor="let pz of this.ended">{{pz['rom.process']}}</p>

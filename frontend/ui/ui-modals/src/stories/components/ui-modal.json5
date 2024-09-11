@@ -1,0 +1,9 @@
+{
+  "name": "Modal Window",
+  "description": "Simple modal window",
+  "package": "@solenopsys/ui-modals",
+  "component": "ModalComponent",
+  "io": {
+
+  }
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "name":"TimeTracking",
+    "link":"/time",
+    "icon":"/assets/icons/01-Interface-Essential/18-Time/time-stopwatch.svg",
+    "items":[
+      {
+        "name":"Dashboard",
+        "link":"/time/stat",
+        "icon":"/assets/icons/01-Interface-Essential/02-Dashboard/pie-line-graph-desktop.svg"
+      },
+      {
+        "name":"Time",
+        "link":"/time/time",
+        "icon":"/assets/icons/01-Interface-Essential/18-Time/hourglass.svg"
+      }
+    ]
+  }
+]

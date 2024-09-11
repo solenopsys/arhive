@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Charts",
+    "link": "/components/charts",
+    "icon": "/assets/icons/06-Business-Products/12-Analytics/analytics-bars.svg",
+    "submenus": [
+      "/assets/stories/charts/"
+    ]
+  },
+  {
+    "name": "Controls",
+    "link": "/components/controls",
+    "icon": "/assets/icons/03-Computers-Devices-Electronics/07-Tablets-Kindle/kindle-hold.svg",
+    "submenus": [
+      "/assets/stories/controls/"
+    ]
+  },
+
+  {
+    "name": "Forms",
+    "link": "/components/forms",
+    "icon": "/assets/icons/01-Interface-Essential/32-Form-edition/typing.svg",
+    "submenus": [
+      "/assets/stories/forms/"
+    ]
+  },
+  {
+    "name": "Layouts",
+    "link": "/components/layouts",
+    "icon": "/assets/icons/04-Programing-Apps-Websites/06-Website-Development/browser-page-layout.svg",
+    "submenus": [
+      "/assets/stories/layouts/"
+    ]
+  },
+  {
+    "name": "Navigate",
+    "link": "/components/navigate",
+    "icon": "/assets/icons/48-Maps-Navigation/02-Maps/maps-mark.svg",
+    "submenus": [
+      "/assets/stories/navigate/"
+    ]
+  },
+  {
+    "name": "Lists",
+    "link": "/components/lists",
+    "icon": "/assets/icons/01-Interface-Essential/03-Menu/navigation-menu-1.svg",
+    "submenus": [
+      "/assets/stories/lists/"
+    ]
+  },
+  {
+    "name": "Modals",
+    "link": "/components/modals",
+    "icon": "/assets/icons/11-Content/01-Content-Creation/content-browser-edit.svg",
+    "submenus": [
+      "/assets/stories/modals/"
+    ]
+  },
+  {
+    "name": "Publications",
+    "link": "/components/publications",
+    "icon": "/assets/icons/11-Content/05-Newspapers/newspaper-fold.svg"
+  },
+  {
+    "name": "Templates",
+    "link": "/components/templates",
+    "icon": "/assets/icons/12-Design/01-Design-Process/design-tool-layout.svg",
+    "submenus": [
+      "/assets/stories/templates/"
+    ]
+  }
+]

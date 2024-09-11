@@ -1,0 +1,11 @@
+{
+  "name": "@solenopsys/mf-diagram",
+  "version": "0.1.0",
+   "scripts": {
+    "build": "vite build  -c ../../../lib.config.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "canvas-txt": "^3.0.0"
+  }
+}

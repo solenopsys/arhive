@@ -1,0 +1,10 @@
+replicasCount: 1
+fullName: "alexstorm-hsm-kubernetes"
+selectorLabel: "alexstorm-hsm-kubernetes"
+hsServiceName: "alexstorm-hsm-kubernetes"
+
+containers:
+  router:
+    name: api-adapter
+    image: registry.solenopsys.org/alexstorm-hsm-kubernetes
+    zmqPort: 9999

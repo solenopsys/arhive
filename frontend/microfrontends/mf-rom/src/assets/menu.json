@@ -1,0 +1,34 @@
+[
+  {
+    "name": "RoM",
+    "link": "/rom",
+    "icon": "/assets/icons/06-Business-Products/05-Product-Launch/laptop-launch.svg",
+    "items": [
+      {
+        "name": "Goals",
+        "link": "/rom/goals",
+        "icon": "/assets/icons/06-Business-Products/04-Strategy/target-center-1.svg"
+      },
+      {
+        "name": "Plan",
+        "link": "/rom/goals/plan",
+        "icon": "/assets/icons/06-Business-Products/04-Strategy/target-path.svg"
+      },
+      {
+        "name": "Running",
+        "link": "/rom/running",
+        "icon": "/assets/icons/01-Interface-Essential/42-Multimedia-Controls/button-play.svg"
+      },
+      {
+        "name": "Processes",
+        "link": "/rom/processes",
+        "icon": "/assets/icons/01-Interface-Essential/45-Loading/loading-bar.svg"
+      },
+      {
+        "name": "Executions",
+        "link": "/rom/executions",
+        "icon": "/assets/icons/06-Business-Products/05-Product-Launch/launch-go-flag.svg"
+      }
+    ]
+  }
+]

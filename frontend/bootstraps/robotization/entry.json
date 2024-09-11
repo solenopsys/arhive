@@ -1,0 +1,61 @@
+{
+  "layout": {
+    "module": "@solenopsys/mf-layout",
+    "data": {
+      "navigate": {
+        "/founds": {
+          "title": "Micro founds"
+        },
+        "/team": {
+          "title": "Team"
+        },
+        "/sys": {
+          "title": "System"
+        },
+        "/technology": {
+          "title": "Technology"
+        },
+        "/stages": {
+          "title": "Stages"
+        }
+      },
+      "logo": "/endpoints/solenopsys/fr-robotization/assets/logo.svg",
+      "favicon": "/endpoints/solenopsys/fr-robotization/assets/favicon.svg",
+      "title": "Robotization vc"
+    }
+  },
+  "routes": {
+    "/": {
+      "module": "@solenopsys/mf-landing",
+      "data": "/ipfs/01"
+    },
+    "/founds": {
+      "module": "@solenopsys/mf-microfonds",
+      "data": "/ipfs/01"
+    },
+    "/sys": {
+      "module": "@solenopsys/mf-diagram",
+      "data": {
+        "url": "/endpoints/solenopsys/fr-robotization/assets/diaram-conf.json"
+      }
+    },
+    "/team": {
+      "module": "@solenopsys/mf-people",
+      "data": "/ipfs/01"
+    },
+    "/stages": {
+      "module": "@solenopsys/mf-stages",
+      "data": {
+        "url": "/endpoints/solenopsys/fr-robotization/assets/stages.json"
+      }
+    },
+    "/about": {
+      "module": "@solenopsys/mf-content",
+      "data": "/ipfs/01"
+    },
+    "/technology": {
+      "module": "@solenopsys/mf-generator",
+      "data": "/ipfs/01"
+    }
+  }
+}

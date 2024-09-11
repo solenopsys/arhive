@@ -1,0 +1,12 @@
+{
+  "name": "@solenopsys/ui-forms",
+  "version": "0.1.0",
+  "peerDependencies": {
+    "@solenopsys/ui-controls": "0.1.0",
+    "@solenopsys/ui-icons": "0.1.0",
+    "@solenopsys/ui-utils": "0.1.0"
+  },
+  "scripts": {
+    "build": "ng-packagr -p xs-package.json -c ../../../configurations/typescript/libraries.json"
+  }
+}

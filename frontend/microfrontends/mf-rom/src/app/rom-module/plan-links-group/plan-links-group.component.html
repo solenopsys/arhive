@@ -1,0 +1,32 @@
+<div style="width: 250px;">
+    <h4>{{title}}</h4>
+
+    <app-linked-field *ngIf="edit"
+                      (createNewItem)="newItem($event)"
+                      (linkSelected)="linkSelect($event)"
+                      [type]="type"
+                      [provider]="provider">
+    </app-linked-field>
+
+
+    <ui-icon-button  *ngIf="!edit"
+            icon="/assets/icons/01-Interface-Essential/43-Remove-Add/add-bold.svg"
+            title="Добавить"
+            (click)="edit=true"></ui-icon-button>
+
+    <div *ngFor="let pl of items$| async; let i =index;" style="display: flex;">
+        <app-plan-link
+                [value]="pl"
+                [type]="type"
+                [goalId]="goalId"
+
+        ><!--                (valueChange)="changeValue($event,pl)"-->
+        </app-plan-link>
+        <ui-icon-button
+                icon="/assets/icons/01-Interface-Essential/43-Remove-Add/remove-bold.svg"
+                title="Удалить"
+                (click)="remove(i)">
+        </ui-icon-button>
+    </div>
+
+</div>

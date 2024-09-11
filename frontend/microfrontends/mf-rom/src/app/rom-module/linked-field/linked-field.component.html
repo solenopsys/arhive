@@ -1,0 +1,14 @@
+<div style="display: flex;">
+    <ui-select-save
+            [value]="value$ | async"
+            (valueChange)="selectValue=$event"
+            (save)="createNewItem.emit($event)"
+            (newSelect)="newSelect=$event"
+            [dataProvider]="provider">
+    </ui-select-save>
+    <ui-icon-button *ngIf="newSelect"
+                     icon="/assets/icons/01-Interface-Essential/27-Link-Unlink/hyperlink-2.svg"
+                     title="Связать с целью"
+                     (click)="linkToGoal()">
+    </ui-icon-button>
+</div>

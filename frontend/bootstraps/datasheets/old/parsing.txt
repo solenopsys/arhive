@@ -1,0 +1,1 @@
+URL запроса: https://www.digikey.com/products/api/v4/filter-page/58?s=N4IgrCBcoA5QzAGhDOkBMYC+Wg

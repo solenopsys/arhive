@@ -1,0 +1,17 @@
+{
+  "name": "@solenopsys/mf-git",
+  "version": "0.1.0",
+
+  "dependencies": {
+    "echarts": "^5.4.0",
+    "ngx-echarts": "^16.0.0",
+    "@solenopsys/ui-templates": "^0.1.0",
+    "@solenopsys/fl-dgraph": "^0.1.0",
+    "@solenopsys/fl-hyperstreams": "^0.1.0"
+  },
+
+   "scripts": {
+    "build": "vite build  -c ../../../lib.config.js"
+  },
+  "type": "module"
+}

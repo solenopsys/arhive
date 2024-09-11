@@ -1,0 +1,16 @@
+{
+  "name": "LayoutComponent",
+  "description": "Layout Component",
+  "package": "@solenopsys/ui-layouts",
+  "component": "LayoutComponent",
+  "io": {
+    "leftNavTemplate": {
+      "directions": ["input"],
+      "type": "any"
+    },
+    "rightNavTemplate": {
+      "directions": ["input"],
+      "type": "number"
+    }
+  }
+}

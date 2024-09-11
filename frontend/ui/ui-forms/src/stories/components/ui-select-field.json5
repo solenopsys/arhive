@@ -1,0 +1,14 @@
+{
+  "name": "SelectFiled",
+  "description": "Select field",
+  "package": "@solenopsys/ui-forms",
+  "component": "SelectFiledComponent",
+  "io": {
+    "title": {
+      "directions": ["input"],
+      "type": "string"
+    }
+
+
+  }
+}

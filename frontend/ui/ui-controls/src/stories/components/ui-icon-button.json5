@@ -1,0 +1,9 @@
+{
+  "name": "IconButton",
+  "description": "Icon button component",
+  "component": "IconButtonComponent",
+  "package": "@solenopsys/ui-controls",
+  "io": {
+
+  }
+}

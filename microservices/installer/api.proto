@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+
+option go_package = ".";
+
+
+message OperationStatus{
+  string status = 1;
+}
+
+message Chart{
+  string name = 1;
+  string repository = 2;
+  string version = 3;
+  string digest = 4;
+}
+
+message GetChartsRequest {
+}
+
+message ChartsResponse{
+  repeated Chart charts = 1;
+}
+
+message InstallChartRequest{
+  Chart  chart = 1;
+}
+
+message UninstallChartRequest{
+  string digest = 1;
+}
+

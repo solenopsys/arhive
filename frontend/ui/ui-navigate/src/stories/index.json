@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Logo",
+    "name": "ui-logo"
+  },
+  {
+    "title": "Menu",
+    "name": "ui-menu"
+  },
+  {
+    "title": "Menu Item",
+    "name": "ui-menu-item"
+  },
+  {
+    "title": "Sub Menu",
+    "name": "ui-sub-menu"
+  },
+  {
+    "title": "Tabs",
+    "name": "ui-tabs"
+  },
+  {
+    "title": "Top Pane",
+    "name": "ui-top-pane"
+  }
+]

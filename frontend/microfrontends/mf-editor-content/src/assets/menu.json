@@ -1,0 +1,28 @@
+[{
+  "name":"Content",
+  "link":"/content",
+  "icon":"/assets/icons/11-Content/02-Books/book-book-pages.svg",
+  "items":[
+    {
+      "name":"Fragments",
+      "link":"/content/fragments",
+      "icon":"/assets/icons/11-Content/01-Content-Creation/content-write.svg"
+    },
+    {
+      "name":"Move",
+      "link":"/content/move",
+      "icon":"/assets/icons/12-Design/12-Flip/reflect-right.svg"
+    },
+    {
+      "name":"Groups",
+      "link":"/content/groups",
+      "icon":"/assets/icons/07-Work-Office-Companies/01-Ideas-Creativity/idea-strategy.svg"
+    },
+    {
+      "name":"Scopes",
+      "link":"/content/scopes",
+      "icon":"/assets/icons/11-Content/01-Content-Creation/content-pencil-write.svg"
+    }
+  ]
+}
+]

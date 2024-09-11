@@ -1,0 +1,24 @@
+<div *ngIf="$stages | async; let  stages">
+
+    <h3>Basic stages:</h3>
+    <ol>
+
+        <li *ngFor="let stage of stages">{{stage.name}}</li>
+
+    </ol>
+
+    <div *ngFor="let stage of stages">
+        <h2>{{stage.name}}</h2>
+        {{stage.target}}
+        <ul>
+            <li *ngFor="let module of stage.modules">{{module.name}}</li>
+
+        </ul>
+
+        <h3>Engineering</h3>
+        <ul>
+            <li>Blade based power delivery</li>
+        </ul>
+
+    </div>
+</div>

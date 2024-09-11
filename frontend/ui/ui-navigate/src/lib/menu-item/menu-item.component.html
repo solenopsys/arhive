@@ -1,0 +1,10 @@
+<div class="item">
+    <img *ngIf="data?.icon" class="logo_image" src="{{data.icon | baseDir}}">
+    <a (click)="clickEvent.emit(data.link)" [routerLink]="['/'+data.link+'/.']" [routerLinkActive]="['active_link']"
+       class="link">{{data.name}}</a>
+</div>
+<div *ngIf="!collapsed" class="sub_item">
+    <ui-menu-item *ngFor=" let item of data?.items" [data]="item">
+    </ui-menu-item>
+</div>
+

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ipfs-bootstrap
+data:
+  bootstrap.sh: |
+    #!/bin/sh
+    set -ex
+    ipfs bootstrap rm all
+    {{- range $key, $value := .Values.bootstrap }}
+    ipfs bootstrap add "{{ $value }}"
+    {{- end }}
+
+    ipfs config Routing --json '{ "Type": "{{ .Values.routing }}" }'

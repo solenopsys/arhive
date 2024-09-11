@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.fullName}}
+data:
+  protonmail-bridge.yml: |-
+    protonmail:
+      username: {{ .Values.login.username }}
+      password:  {{ .Values.login.password }}
+      decryption_password: {{ .Values.login.decryption_password }}
+      auto_start: true
+      ports:
+        smtp:  {{ .Values.service.smtp }}
+        imap:  {{ .Values.service.imap }}

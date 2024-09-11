@@ -1,0 +1,14 @@
+<div *ngIf="iconsGroups" >
+  <h2 style="margin-bottom: 50px;padding-left: 35px;">{{section}}</h2>
+  <div *ngFor="let group of iconsGroups | keyvalue" style="padding-left: 40px"><h4>{{group.key}}</h4>
+
+    <div style="display: flex; font-size: 10px">
+
+<!--      <ui-dynamic-icon *ngFor="let icon of group.value | keyvalue" [name]="icon.key"-->
+<!--                        [src]="icon.value"></ui-dynamic-icon>-->
+
+    </div>
+
+  </div>
+
+</div>

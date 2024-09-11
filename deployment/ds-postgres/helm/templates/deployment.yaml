@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name:  {{ .Values.fullName }}
+spec:
+  serviceName: {{ .Values.fullName }}
+  replicas: {{ .Values.replicasCount }}
+  selector:
+    matchLabels:
+        app: {{ .Values.selectorLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.fullName}}
+    spec:
+      containers:
+        - name: {{ .Values.containers.postgres.name}}
+          image: {{ .Values.containers.postgres.image}}
+          imagePullPolicy: {{ .Values.containers.postgres.pullPolicy}}
+          ports:
+            - containerPort:  {{ .Values.service.port}}
+              name: pgport
+              protocol: TCP
+          volumeMounts:
+            - name:  {{ .Values.storage.volumeName }}
+              mountPath: /var/lib/postgresql/data
+          env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: {{ .Values.containers.postgres.secret}}
+                  optional: false
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+            - name: POSTGRES_MAX_CONNECTIONS
+              value: "100"
+            - name: POSTGRES_TCP_KEEPALIVES_IDLE
+              value: "60"
+            - name: POSTGRES_TCP_KEEPALIVES_INTERVAL
+              value: "10"
+            - name: POSTGRES_TCP_KEEPALIVES_COUNT
+              value: "6"
+      terminationGracePeriodSeconds: 60
+      volumes:
+        - name: {{ .Values.storage.volumeName }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.storage.volumeClimeName }}
+  updateStrategy:
+    type: RollingUpdate

@@ -1,0 +1,12 @@
+{
+  "name": "@solenopsys/ui-qr",
+  "version": "0.1.0",
+  "peerDependencies": {
+    "@solenopsys/ui-utils": "0.1.0",
+    "qrcode": "^1.5.0",
+    "@types/qrcode": "^1.5.0"
+  },
+  "scripts": {
+    "build": "ng-packagr -p xs-package.json -c ../../../configurations/typescript/libraries.json"
+  }
+}

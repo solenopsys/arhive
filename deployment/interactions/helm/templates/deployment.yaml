@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  {{ .Values.fullName }}
+spec:
+  replicas: {{ .Values.replicasCount }}
+  selector:
+    matchLabels:
+        app: {{ .Values.selectorLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.fullName}}
+        type: hStreamNode
+        hsServiceName: {{ .Values.fullName }}
+    spec:
+      containers:
+        - name: {{ .Values.container.name}}
+          image: {{ .Values.container.image}}
+          imagePullPolicy: {{ .Values.container.pullPolicy}}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          env:
+            - name: postgres.Host
+              value: "solenopsys-ds-postgres.default.svc.cluster.local"
+            - name: postgres.Port
+              value: "5432"
+            - name: postgres.Password
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: pgpassword
+                  optional: false
+            - name: postgres.User
+              value: postgres
+      terminationGracePeriodSeconds: 60

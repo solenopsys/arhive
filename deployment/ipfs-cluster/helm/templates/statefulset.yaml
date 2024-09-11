@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Values.fullName }}
+  labels:
+    app: {{ .Values.fullName }}
+spec:
+  serviceName: {{ .Values.fullName }}
+  replicas: {{ .Values.replicasCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.fullName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.fullName }}
+    spec:
+      volumes:
+        - name: bootstrap-volume
+          configMap:
+            name: ipfs-cluster-bootstrap
+            items:
+              - key: bootstrap.sh
+                path: bootstrap.sh
+      containers:
+        - image: {{ .Values.containers.kobo.image }}
+          env:
+            - name: CLUSTER_PEERNAME
+              value: {{ .Values.peerName }}
+            - name: CLUSTER_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.fullName }}-secret
+                  key: secret
+            - name: CLUSTER_IPFSHTTP_NODEMULTIADDRESS
+              value: /dns4/{{ .Values.ipfsServiceName }}.default.svc.cluster.local/tcp/5001
+            - name: CLUSTER_CRDT_TRUSTEDPEERS
+              value: '*' # Trust all peers in Cluster
+            - name: CLUSTER_RESTAPI_HTTPLISTENMULTIADDRESS
+              value: /ip4/0.0.0.0/tcp/9094 # Expose API
+            - name: CLUSTER_MONITORPINGINTERVAL
+              value: 2s # Speed up peer discovery
+          command:
+            - /bin/sh
+            - /container-init.d/bootstrap.sh
+          name: {{ .Values.containers.kobo.name }}
+          imagePullPolicy: {{ .Values.containers.kobo.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.p2p }}
+              name: p2p
+            - containerPort: {{ .Values.service.rest }}
+              name: rest
+          volumeMounts:
+            - name: {{ .Values.storage.data.volumeName }}
+              mountPath: /data/ipfs-cluster
+            - name: bootstrap-volume
+              mountPath: /container-init.d/bootstrap.sh
+              subPath: bootstrap.sh
+              readOnly: true
+  updateStrategy:
+    type: RollingUpdate
+  volumeClaimTemplates:
+    - metadata:
+        name: {{ .Values.storage.data.volumeName }}
+        annotations:
+          volume.alpha.kubernetes.io/storage-class: anything
+      spec:
+        accessModes:
+          - {{ .Values.storage.data.accessModes }}
+        resources:
+          requests:
+            storage: {{ .Values.storage.data.storageSize }}

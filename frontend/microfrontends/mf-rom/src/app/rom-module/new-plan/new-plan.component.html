@@ -1,0 +1,28 @@
+<div style="display: flex; ">
+    <div>
+        <app-items-list
+                [title]="'Процессы'"
+                [provider]="processProvider"
+                [itemActions]="itemsAction"
+                [clickActionKey]="'click'"
+                [items$]="processes$"
+                [type]="types.process"
+                (dispatch)="itemAction($event,'process')">
+        </app-items-list>
+
+        <app-items-list
+                [title]="'Ресурсы'"
+                [provider]="resourceProvider"
+                [itemActions]="itemsAction"
+                [clickActionKey]="'click'"
+                [items$]="resources$"
+                [type]="types.resource"
+                (dispatch)="itemAction($event,'resource')">
+        </app-items-list>
+
+    </div>
+
+    <div style="padding: 20px;">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+replicasCount: 1
+fullName: "ipfs-node"
+selectorLabel: "ipfs-node"
+
+domain: "ipfs"
+
+service:
+  p2p: 4001 # for the Distributed Hash Table (DHT) communication between nodes.
+  gateway: 8080 # for the IPFS Gateway, which allows users to access IPFS content via a web browser using HTTP.
+  rpc: 5001 # for the IPFS HTTP API, which allows for file operations to be performed through HTTP requests.
+
+storage:
+  staging:
+    volumeName: staging-vol
+    storageSize: 1Gi
+    accessModes: "ReadWriteOnce"
+  data:
+    volumeName: data-vol
+    storageSize: 10Gi
+    accessModes: "ReadWriteOnce"
+
+containers:
+  kobo:
+    name: kubo
+    image: ipfs/kubo
+    pullPolicy: IfNotPresent
+
+routing: dhtclient
+
+bootstrap:
+  - "/dns4/alpha-ipfs-node-service.default.svc.cluster.local/tcp/4001/p2p/12D3KooWL2A1zj6oqVSRtanyZGDwJaEApxcg1JDAaCRbLayQ3aFd"
+  - "/dns4/bravo-ipfs-node-service.default.svc.cluster.local/tcp/4001/p2p/12D3KooWHQNAJ2iLFFxpvH9YwE4r9MVMrYoQ9YxiVGY5L3qTJi1w"
+  - "/dns4/charlie-ipfs-node-service.default.svc.cluster.local/tcp/4001/p2p/12D3KooWCG8XDMrBD8dSpEhoUhVUxAoGh3akYPVXFzKYVJ22yzQK"

@@ -1,0 +1,23 @@
+replicasCount: 1
+fullName: "solenopsys-ds-postgres"
+selectorLabel: "solenopsys-ds-postgres"
+
+service:
+  port: 5432
+
+storage:
+  volumeName: postgres-volume
+  volumeClimeName: postgres-pvc
+  storageSize: 1Gi
+  accessModes: "ReadWriteOnce"
+  hostPath: "/opt/postgresql-volume"
+  storageClass: "local-path"
+
+containers:
+  postgres:
+    name: postgres
+    image: postgres:15.2
+    pullPolicy: IfNotPresent
+    secret: pg-password
+
+

@@ -1,0 +1,7 @@
+@defer (when groups$) {
+    <div class="textBlockLimit">
+        @for (group of groups$ | async;track $index) {
+            <ui-text-view [blocks]="group.items"></ui-text-view>
+        }
+    </div>
+}

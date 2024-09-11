@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ipfs-cluster-bootstrap
+data:
+  bootstrap.sh: |
+    #!/bin/sh
+    set -ex
+    ipfs-cluster-service init
+    ipfs-cluster-service daemon --bootstrap {{ join "," .Values.bootstrap }}

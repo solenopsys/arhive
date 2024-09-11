@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  {{ .Values.fullName }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.selectorLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.selectorLabel }}
+    spec:
+      containers:
+        - name:  {{ .Values.container.name}}
+          image:  {{ .Values.container.image}}
+          ports:
+            - containerPort: {{ .Values.ports.pod.smtpSecure }}
+              name: smtp-secure
+            - containerPort: {{ .Values.ports.pod.smtp }}
+              name: smtp
+          volumeMounts:
+            - mountPath: "/etc/ssl"
+              name: smtp-tls-cert
+              readOnly: true    
+          env:
+            - name: SSL_TYPE
+              value: 'manual'
+            - name: SSL_CERT_PATH
+              value: '/etc/ssl/tls.crt'
+            - name: SSL_KEY_PATH
+              value: '/etc/ssl/tls.key'
+            - name: RELAY_FROM_HOSTS
+              value: '127.0.0.0/8 10.0.0.0/8 192.0.0.0/8 172.0.0.0/8 ::1'            
+            - name: HOSTNAME
+              value: {{ .Values.mailHost }}
+      volumes:
+        - name: smtp-tls-cert
+          secret:
+            secretName: smtp-tls-secret

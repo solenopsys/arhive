@@ -1,0 +1,11 @@
+<div style="display: flex; ">
+    <div>
+        <div style="min-width: 250px;font-size: 15px; position: fixed; margin-top: 25px; ">
+            <ui-sub-menu [prefix]="'/rom/goals/plan/'" [items]="goals$ | async"></ui-sub-menu>
+        </div>
+    </div>
+    <div style="padding-left: 350px">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+

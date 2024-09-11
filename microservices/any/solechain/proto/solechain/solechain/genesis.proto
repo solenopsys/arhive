@@ -1,0 +1,12 @@
+syntax = "proto3";
+package solechain.solechain;
+
+import "gogoproto/gogo.proto";
+import "solechain/solechain/params.proto";
+
+option go_package = "solechain/x/solechain/types";
+
+// GenesisState defines the solechain module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+}

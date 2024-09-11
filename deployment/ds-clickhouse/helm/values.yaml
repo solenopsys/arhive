@@ -1,0 +1,23 @@
+replicasCount: 1
+fullName: "solenopsys-ds-clickhouse"
+selectorLabel: "solenopsys-ds-clickhouse"
+
+service:
+  http: 8123
+  native: 9000
+
+storage:
+  volumeName: clickhouse-volume
+  volumeClimeName: clickhouse-pvc
+  storageSize: 5Gi
+  accessModes: "ReadWriteOnce"
+  hostPath: "/opt/clickhouse-volume"
+  storageClass: "local-path"
+
+
+containers:
+  clickhouse:
+    name: clickhouse
+    #image: { { if PIPELINE } } altinity/clickhouse-server:21.12.3.32.altinitydev { { else } } yandex/clickhouse-server { { end } }
+    image: yandex/clickhouse-server
+    pullPolicy: IfNotPresent

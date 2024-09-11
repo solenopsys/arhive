@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name:  {{ .Values.fullName }}
+spec:
+  serviceName: {{ .Values.fullName }}
+  replicas: {{ .Values.replicasCount }}
+  selector:
+    matchLabels:
+        app: {{ .Values.selectorLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.fullName}}
+    spec:
+      containers:
+        - name: {{ .Values.containers.registry.name}}
+          image: {{ .Values.containers.registry.image}}
+          imagePullPolicy: {{ .Values.containers.registry.pullPolicy}}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+              name: http
+      terminationGracePeriodSeconds: 60
+  updateStrategy:
+    type: RollingUpdate

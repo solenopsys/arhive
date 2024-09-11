@@ -1,0 +1,8 @@
+apiVersion: v2
+name: alexstorm-hsm-kubernetes
+version: 0.1.0
+description: Kubernetes api hStream
+icon: "http://solenopsys.org/apps/assets/kubernetes.svg"
+appVersion: 1.0.0
+
+

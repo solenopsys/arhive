@@ -1,0 +1,9 @@
+{
+  "name": "Checkbox",
+  "description": "Checkbox",
+  "package": "@solenopsys/ui-forms",
+  "component": "SCheckboxFieldComponent",
+  "io": {
+
+  }
+}

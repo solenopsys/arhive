@@ -1,0 +1,8 @@
+apiVersion: v2
+name: ipfs-containers-registry
+version: 0.1.1
+description: Ipfs docker registry
+icon: "http://solenopsys.org/apps/assets/ipfs-docker-registry.svg"
+appVersion: 1.0.0
+
+

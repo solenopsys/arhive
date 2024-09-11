@@ -1,0 +1,11 @@
+{
+  "name": "@solenopsys/fl-installer",
+  "version": "0.1.0",
+  "peerDependencies": {
+    "@solenopsys/fl-hyperstreams": "^0.1.0",
+    "protobufjs": "^7.2.3"
+  },
+  "scripts": {
+    "build": "ng-packagr -p xs-package.json -c ../../../configurations/typescript/libraries.json"
+  }
+}

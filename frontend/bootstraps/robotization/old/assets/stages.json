@@ -1,0 +1,228 @@
+[
+  {
+    "name": "Low power robotics (up to 240 watts)",
+    "target": "3D printers (FDM)",
+    "modules": [
+      {
+        "name": "Minimal Hub (8 IUSB)",
+        "tags": [
+          "hub"
+        ]
+      },
+      {
+        "name": "STM32 Arm Core",
+        "tags": [
+          "cpu"
+        ]
+      },
+      {
+        "name": "Power Relay 24V",
+        "tags": [
+          "relay"
+        ]
+      },
+      {
+        "name": "USB Interface Module",
+        "tags": [
+          "io"
+        ]
+      },
+      {
+        "name": "Stepper Driver",
+        "tags": [
+          "driver"
+        ]
+      },
+      {
+        "name": "Thermal Sensor Controller",
+        "tags": [
+          "sensor"
+        ]
+      },
+      {
+        "name": "End Sensor Magnet",
+        "tags": [
+          "sensor"
+        ]
+      },
+      {
+        "name": "Optical Sensor Controller",
+        "tags": [
+          "sensor"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Autonomous robotics drones & Autonomous power management",
+    "target": "robots and drones",
+    "modules": [
+      {
+        "name": "Drone Hub (12 IUSB)",
+        "tags": []
+      },
+      {
+        "name": "accumulators controller",
+        "tags": []
+      },
+      {
+        "name": "charging controller",
+        "tags": []
+      },
+      {
+        "name": "ECS up to 1000w",
+        "tags": []
+      },
+      {
+        "name": "WIFI",
+        "tags": []
+      },
+      {
+        "name": "GPS",
+        "tags": []
+      },
+      {
+        "name": "Ultrasonic",
+        "tags": []
+      },
+      {
+        "name": "accelerometer",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "name": "3D printers ",
+    "target": "3D printers (SLA)",
+    "modules": [
+      {
+        "name": "Middle Hub (12 IUSB)",
+        "tags": [
+          "hub"
+        ]
+      },
+      {
+        "name": "Power Arm Core (arm+ddr)",
+        "tags": [
+          "cpu"
+        ]
+      },
+      {
+        "name": "LCD Controller adapter",
+        "tags": [
+          "adapter"
+        ]
+      },
+      {
+        "name": "DLP Controller adapter",
+        "tags": [
+          "adapter"
+        ]
+      },
+      {
+        "name": "Led driver",
+        "tags": [
+          "power"
+        ]
+      },
+      {
+        "name": "Ethernet Interface Module 1GB",
+        "tags": [
+          "io"
+        ]
+      },
+      {
+        "name": "Liqud level sensor ultrasonic",
+        "tags": [
+          "sensor"
+        ]
+      },
+      {
+        "name": "Camera module adapter",
+        "tags": [
+          "sensor"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Middle power robotics, (up to 10.000 watts)",
+    "target": "Hi power industrial robots, CNC machines (lathe, milling)",
+    "modules": [
+      {
+        "name": "Stand By Power Supply module 10w",
+        "tags": []
+      },
+      {
+        "name": "One Phase KKM to 400",
+        "tags": []
+      },
+      {
+        "name": "There Phase KKM to 400",
+        "tags": []
+      },
+      {
+        "name": "Filter Module One Phase (power control)",
+        "tags": []
+      },
+      {
+        "name": "Filter Module Three Phase (power control)",
+        "tags": []
+      },
+      {
+        "name": "Power Inverter 400 to 24/48/96",
+        "tags": []
+      },
+      {
+        "name": "Capacitor Module",
+        "tags": []
+      },
+      {
+        "name": "Encoder Sensor",
+        "tags": []
+      },
+      {
+        "name": "Power Stepper Controller 24",
+        "tags": []
+      },
+      {
+        "name": "Three phase servo motor controller 1000w",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "name": "Industrial data processing && Data transmission",
+    "target": "industrial systems for data processing, industrial systems for data transmission, wires and wireless",
+    "modules": [
+      {
+        "name": "24-5V Converter",
+        "tags": [
+          "power"
+        ]
+      },
+      {
+        "name": "5-3.3V Converter",
+        "tags": [
+          "power"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Photonics energy systems",
+    "target": ""
+  },
+  {
+    "name": "Deep industrial  ",
+    "target": "industrial systems for data transmission, wires and wireless"
+  },
+  {
+    "name": "Sensors ",
+    "target": "industrial systems for data transmission, wires and wireless"
+  },
+  {
+    "name": "Autonomous systems controllers ",
+    "target": "solar inverters, generator inverter, accumulators invertor, dws controller"
+  }
+]

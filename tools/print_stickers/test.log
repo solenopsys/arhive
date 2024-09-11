@@ -1,0 +1,18 @@
+2022-01-13 16:46:01,954 - brother_ql.raster - DEBUG - raster_image_size: 720x271
+2022-01-13 16:46:02,036 - brother_ql.backends.helpers - INFO - Sending instructions to the printer. Total: 50642 bytes.
+2022-01-13 16:46:02,036 - brother_ql.backends.generic - DEBUG - Writing 50642 bytes.
+2022-01-13 16:46:53,856 - brother_ql.raster - DEBUG - raster_image_size: 720x271
+2022-01-13 16:47:23,300 - brother_ql.raster - DEBUG - raster_image_size: 720x271
+2022-01-13 16:47:23,695 - brother_ql.backends.helpers - INFO - Sending instructions to the printer. Total: 50642 bytes.
+2022-01-13 16:47:23,696 - brother_ql.backends.generic - DEBUG - Writing 50642 bytes.
+2022-01-13 16:53:31,717 - brother_ql.raster - DEBUG - raster_image_size: 720x271
+2022-01-13 16:53:31,774 - brother_ql.backends.helpers - INFO - Sending instructions to the printer. Total: 50650 bytes.
+2022-01-13 16:53:31,775 - brother_ql.backends.generic - DEBUG - Writing 50650 bytes.
+2022-01-13 16:56:55,335 - brother_ql.raster - DEBUG - raster_image_size: 720x271
+2022-01-13 16:56:55,447 - brother_ql.backends.helpers - INFO - Sending instructions to the printer. Total: 50653 bytes.
+2022-01-13 16:56:55,447 - brother_ql.backends.generic - DEBUG - Writing 50653 bytes.
+2022-01-13 17:03:49,789 - brother_ql.raster - DEBUG - raster_image_size: 720x271
+2022-01-13 17:04:11,263 - brother_ql.raster - DEBUG - raster_image_size: 720x271
+2022-01-13 17:04:34,158 - brother_ql.raster - DEBUG - raster_image_size: 720x271
+2022-01-13 17:04:40,137 - brother_ql.backends.helpers - INFO - Sending instructions to the printer. Total: 25450 bytes.
+2022-01-13 17:04:40,137 - brother_ql.backends.generic - DEBUG - Writing 25450 bytes.

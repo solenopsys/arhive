@@ -1,0 +1,20 @@
+{
+  "name": "FormField",
+  "description": "Tex field for form",
+  "package": "@solenopsys/ui-forms",
+  "component": "STextFieldComponent",
+  "io": {
+    "data": {
+      "directions": ["input","output"],
+      "type": "any"
+    },
+    "width": {
+      "directions": ["input"],
+      "type": "number"
+    },
+    "config": {
+      "directions": ["input"],
+      "type": "EntityTitle"
+    }
+  }
+}

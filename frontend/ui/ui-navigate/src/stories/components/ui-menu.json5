@@ -1,0 +1,9 @@
+{
+  "name": "Menu",
+  "description": "Menu component",
+  "package": "@solenopsys/ui-navigate",
+  "component": "MenuComponent",
+  "io": {
+
+  }
+}

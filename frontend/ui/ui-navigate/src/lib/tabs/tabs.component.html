@@ -1,0 +1,10 @@
+<div style="display: flex;">
+    <div (click)="tabClick.emit(tab.id)"
+         *ngFor=" let tab of tabs"
+         [ngStyle]="selected===tab.id ?
+       {borderBottomColor:'#51504f',fontWeight:'bold'}:
+       {borderBottomColor:'transparent',fontWeight:'normal'}"
+         class="tab_style">
+        {{tab.title}}
+    </div>
+</div>

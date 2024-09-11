@@ -1,0 +1,45 @@
+# This StatefulSet runs 1 pod with one Zero container and one Alpha container.
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name:  {{ .Values.fullName }}
+spec:
+  serviceName:  {{ .Values.fullName }}
+  replicas: 1
+  selector:
+    matchLabels:
+      app:  {{ .Values.selectorLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.fullName }}
+    spec:
+      containers:
+        - name: {{ .Values.containers.spn_node.name }}
+          tty: true
+          image: {{ .Values.containers.spn_node.image }}
+          imagePullPolicy:  {{ .Values.containers.spn_node.pullPolicy }}
+          ports:
+            - containerPort:  {{ .Values.service.tendermintPort }}
+              name: tendermint
+            - containerPort:  {{ .Values.service.blockchainApiPort }}
+              name: api
+            - containerPort:  {{ .Values.service.p2pPort }}
+              name: p2p
+            - containerPort:  {{ .Values.service.rpcPort }}
+              name: rpc
+          volumeMounts:
+            - name: {{ .Values.storage.volumeName }}
+              mountPath: ~/.mychain
+          command:
+            - ignite
+            - chain
+            - serve
+            # --home /storage
+      terminationGracePeriodSeconds: 60
+      volumes:
+        - name: {{ .Values.storage.volumeName }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.storage.volumeClimeName }}
+  updateStrategy:
+    type: RollingUpdate

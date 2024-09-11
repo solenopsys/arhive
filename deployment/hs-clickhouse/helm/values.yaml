@@ -1,0 +1,13 @@
+replicasCount: 1
+fullName: "alexstorm-hsm-clickhouse"
+selectorLabel: "alexstorm-hsm-clickhouse"
+
+service:
+  zmqPort: 9999
+
+containers:
+  hs_adapter:
+    name: alexstorm-hsm-clickhouse
+    image: registry.solenopsys.org/alexstorm-hsm-clickhouse
+    pullPolicy: Always
+

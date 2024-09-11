@@ -1,0 +1,111 @@
+format: xs-configuration-v2
+files:
+  workspace: "/xs-workspace.yaml"
+  tsconfig: "/tsconfig.json"
+scriptsNames:
+  buildMicroFrontend: "build-microfrontend"
+  cacheSynchronization: "cache-synchronization"
+  buildBootstrap: "build-bootstrap"
+hosts:
+  ipfsNode: "ipfs-api.solenopsys.org:80"
+  pinningService: "http://pinning.solenopsys.org"
+  helmRepository: "http://helm.solenopsys.org"
+templates:
+  sections:
+    converged: "@solenopsys/tp-converged" # все что связано с ui
+    shockwaves: "@solenopsys/tp-shockwaves" # все что связано c хранением и обработкои данных
+    combinatorics: "@solenopsys/tp-combinatorics" # все что связано с физическими устройствами
+    synthetic: "@solenopsys/tp-synthetic" # блокчейн и смарт контракты
+    matrix: "@solenopsys/tp-matrix" # все что связано со стандартами и соглашениями
+    platform: "@solenopsys/tp-platform" # все что связано с платформой
+  creation: {}
+git:
+  paths:
+    # converged
+    bootstraps: converged/bootstraps
+    frontlibs: converged/libraries
+    uimatrix: converged/libraries
+    microfrontends: converged/microfrontends
+    # shockwaves
+    backlibs: shockwaves/libraries
+    deployments: shockwaves/deployments
+    microservices: shockwaves/microservices
+    dataservices: shockwaves/dataservices
+    microkernels: shockwaves/microkernels
+    # combinatorics
+    firmware: combinatorics/firmware
+    electronic: combinatorics/electronic
+    engineering: combinatorics/engineering
+    microchips: combinatorics/microchips
+    # synthetic
+    contracts: synthetic/contracts
+    chains: synthetic/chains
+    # platform
+    templates: platform/templates
+    tools: platform/tools
+    content: platform/content
+    generators: platform/generators
+    # matrix
+    standards: matrix/standards
+    protocols: matrix/protocols
+    interfaces: matrix/interfaces
+    guidelines: matrix/guidelines
+  prefixes:
+    bs: bootstraps
+    fl: frontlibs
+    ui: uimatrix
+    mf: microfrontends
+    tl: tools
+    tp: templates
+    bl: backlibs
+    dp: deployments
+    ms: microservices
+    ds: dataservices
+    mc: microkernels
+    ct: content
+    st: standards
+    pr: protocols
+    in: interfaces
+    gl: guidelines
+    fw: firmware
+    el: electronic
+    en: engineering
+    cn: contracts
+    ch: chains
+    gn: generators
+    ic: microchips
+jobs:
+  builders:
+    bootstrap:
+      - converged/bootstraps
+    microfrontend:
+      - converged/modules
+    frontlib:
+      - converged/libraries
+    helm:
+      - shockwaves/deployments
+    backlib:
+      - shockwaves/libraries
+    container:
+      - shockwaves/modules
+  processors:
+    ts_injector:
+      description: Injects source code location to tsconfig.json file
+      triggers:
+        - type: post
+          sections:
+            - converged/libraries
+            - converged/modules
+          command:
+            - code
+            - add
+    ts_remover:
+      description: Remove source code location from tsconfig.json file
+      triggers:
+        - type: post
+          sections:
+            - converged/libraries
+            - converged/modules
+          command:
+            - code
+            - remove

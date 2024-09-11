@@ -1,0 +1,96 @@
+# Chart Values
+
+args: []
+
+image: 
+  tag: v1.15.1
+  debug: false
+  digest: ""
+  registry: docker.io
+  pullPolicy: IfNotPresent
+  repository: axllent/mailpit
+  pullSecrets: []
+
+global: 
+  storageClass: ""
+  imageRegistry: ""
+  imagePullSecrets: []
+
+ingress: 
+  tls: false
+  path: /
+  enabled: false
+  extraTls: []
+  hostname: hostname.local
+  pathType: ImplementationSpecific
+  extraHosts: []
+  annotations: {}
+  ingressClassName: ""
+
+mailpit: 
+  ui: 
+    tls: 
+      enabled: false
+      secretName: ""
+    authFile: 
+      enabled: false
+      htpasswd: ""
+      existingSecret: {}
+  smtp: 
+    tls: 
+      enabled: false
+      secretName: ""
+    authFile: 
+      enabled: false
+      htpasswd: ""
+      existingSecret: {}
+  relay: 
+    config: {}
+    enabled: false
+    relayAll: false
+  webroot: /
+
+service: 
+  http: 
+    type: ClusterIP
+    loadBalancerIP: ""
+    externalTrafficPolicy: Cluster
+    loadBalancerSourceRanges: []
+  smtp: 
+    type: ClusterIP
+    loadBalancerIP: ""
+    externalTrafficPolicy: Cluster
+    loadBalancerSourceRanges: []
+
+affinity: {}
+
+resources: 
+  limits: 
+    cpu: 100m
+    memory: 64Mi
+  requests: 
+    cpu: 5m
+    memory: 4Mi
+
+persistence: 
+  size: 8Gi
+  labels: {}
+  enabled: false
+  selector: {}
+  dataSource: {}
+  accessModes: 
+    - ReadWriteOnce
+  annotations: {}
+  storageClass: ""
+  existingClaim: ""
+
+tolerations: []
+
+extraEnvVars: []
+
+nodeSelector: {}
+
+replicaCount: 1
+
+updateStrategy: 
+  type: RollingUpdate

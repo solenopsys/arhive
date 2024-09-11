@@ -1,0 +1,20 @@
+<svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="2.82777" cy="3.14972" rx="1.08375" ry="1.12642" transform="rotate(10 2.82777 3.14972)" fill="#9D489D"/>
+  <line x1="1.60215" y1="0.870157" x2="2.40677" y2="1.88306" stroke="#030303" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="3.22697" y1="0.766716" x2="3.04478" y2="1.79997" stroke="#030303" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="0.4" y1="-0.4" x2="0.924858" y2="-0.4" transform="matrix(-0.683279 0.730157 -0.716631 -0.697452 3.6949 4.25713)" stroke="#030303" stroke-width="0.8" stroke-linecap="round"/>
+  <ellipse cx="1.79818" cy="1.12055" rx="1.79818" ry="1.12055" transform="matrix(0.98359 -0.18042 0.166978 0.985961 5.57174 3.19035)" fill="#9D489D"/>
+  <line x1="0.4" y1="-0.4" x2="0.893432" y2="-0.4" transform="matrix(-0.198422 0.980117 -0.979713 -0.200405 5.83402 4.82356)" stroke="#030303" stroke-width="0.8" stroke-linecap="round"/>
+  <line x1="0.4" y1="-0.4" x2="0.767098" y2="-0.4" transform="matrix(0.140435 0.99009 -0.98822 0.153039 6.83972 5.18729)" stroke="#030303" stroke-width="0.8" stroke-linecap="round"/>
+  <line x1="4.82506" y1="5.20253" x2="4.70709" y2="5.87156" stroke="#030303" stroke-width="0.8" stroke-linecap="round"/>
+  <ellipse cx="2.82777" cy="3.14972" rx="1.08375" ry="1.12642" transform="rotate(10 2.82777 3.14972)" fill="#9D489D"/>
+  <circle cx="4.09298" cy="4.45957" r="0.613638" transform="rotate(10 4.09298 4.45957)" fill="#9D489D"/>
+  <line x1="1.60215" y1="0.870157" x2="2.40677" y2="1.88306" stroke="#030303" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="3.22697" y1="0.766716" x2="3.04478" y2="1.79997" stroke="#030303" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="0.4" y1="-0.4" x2="0.924858" y2="-0.4" transform="matrix(-0.683279 0.730157 -0.716631 -0.697452 3.6949 4.25713)" stroke="#030303" stroke-width="0.8" stroke-linecap="round"/>
+  <ellipse cx="1.79818" cy="1.12055" rx="1.79818" ry="1.12055" transform="matrix(0.98359 -0.18042 0.166978 0.985961 5.57174 3.19035)" fill="#9D489D"/>
+  <line x1="0.4" y1="-0.4" x2="0.893432" y2="-0.4" transform="matrix(-0.198422 0.980117 -0.979713 -0.200405 5.83402 4.82356)" stroke="#030303" stroke-width="0.8" stroke-linecap="round"/>
+  <line x1="0.4" y1="-0.4" x2="0.767098" y2="-0.4" transform="matrix(0.140435 0.99009 -0.98822 0.153039 6.83972 5.18729)" stroke="#030303" stroke-width="0.8" stroke-linecap="round"/>
+  <circle cx="5.23998" cy="4.78644" r="0.736365" transform="rotate(10 5.23998 4.78644)" fill="#9D489D"/>
+  <line x1="4.82506" y1="5.20253" x2="4.70709" y2="5.87156" stroke="#030303" stroke-width="0.8" stroke-linecap="round"/>
+</svg>

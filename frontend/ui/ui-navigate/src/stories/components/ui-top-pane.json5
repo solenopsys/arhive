@@ -1,0 +1,41 @@
+{
+  "name": "TopPane",
+  "description": "TopPane component",
+  "package": "@solenopsys/ui-navigate",
+  "component": "TopPaneComponent",
+  "inputs": {
+    "tabs$": "Observable"
+  },
+  "io": {
+    "tabs$": {
+      "directions": [
+        "input"
+      ],
+      "type": "Observable"
+    }
+  },
+  "stories": [
+    {
+      "title": "Simple top pane",
+      "params": {
+        "tabs$": [
+          {
+            "id": "tab1",
+            "title": "Tab 1",
+            "content": "Tab 1 content"
+          },
+          {
+            "id": "tab2",
+            "title": "Tab 2",
+            "content": "Tab 2 content"
+          },
+          {
+            "id": "tab3",
+            "title": "Tab 3",
+            "content": "Tab 3 content"
+          }
+        ],
+      }
+    },
+  ]
+}

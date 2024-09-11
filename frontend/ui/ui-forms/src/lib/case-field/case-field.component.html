@@ -1,0 +1,74 @@
+
+<div style="padding-top: 10px; padding-bottom: 10px">
+  <ng-container [ngSwitch]="config?.type">
+    <ui-uid-field *ngSwitchCase="FT.UID" [value]="data" [width]="width">
+    </ui-uid-field>
+    <ui-text-field
+      *ngSwitchCase="FT.STRING"
+      [value]="data"
+      (valueChange)="dataChange.emit($event)"
+      [width]="width"
+    >
+    </ui-text-field>
+    <ui-multiline-field
+      *ngSwitchCase="FT.STRING_MULTILINE"
+      [value]="data"
+      (valueChange)="dataChange.emit($event)"
+      [width]="width"
+    >
+    </ui-multiline-field>
+    <ui-number-field
+      *ngSwitchCase="FT.NUMBER"
+      [value]="data"
+      (valueChange)="dataChange.emit($event)"
+      [width]="width"
+    >
+    </ui-number-field>
+    <ui-date-field
+      *ngSwitchCase="FT.DATE "
+      [time]="false"
+      [value]="data"
+      (valueChange)="dataChange.emit($event)"
+      [width]="width"
+    >
+    </ui-date-field>
+    <ui-file-field
+      *ngSwitchCase="FT.FILE"
+      [value]="data"
+      (valueChange)="dataChange.emit($event)"
+      [width]="width"
+    >
+    </ui-file-field>
+    <ui-date-field
+      *ngSwitchCase="FT.DATETIME"
+      [time]="true"
+      [value]="data"
+      (valueChange)="dataChange.emit($event)"
+      [width]="width"
+    >
+    </ui-date-field>
+    <ui-checkbox-field
+      *ngSwitchCase="FT.BOOLEAN"
+      [value]="data === 'true' || data === true"
+      (valueChange)="dataChange.emit($event)"
+      [width]="width"
+    >
+    </ui-checkbox-field>
+    <ui-code-field
+      *ngSwitchCase="FT.CODE"
+      [value]="data"
+      (valueChange)="dataChange.emit($event)"
+      [language]="config.format"
+      [width]="width"
+    >
+    </ui-code-field>
+    <ui-select-field
+      *ngSwitchCase="FT.EUID"
+      [value]="data"
+      (valueChange)="dataChange.emit($event)"
+      [dataProvider]="initProvider(config.link.titleField)"
+      [width]="width"
+    >
+    </ui-select-field>
+  </ng-container>
+</div>

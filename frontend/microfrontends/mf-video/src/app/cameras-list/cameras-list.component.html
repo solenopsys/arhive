@@ -1,0 +1,3 @@
+<h1>Просмотр видео</h1>
+<div *ngFor="let item of cameras"><a [routerLink]="'/video/video/'+item['camera.folder']"> {{item.description}}</a></div>
+<router-outlet></router-outlet>

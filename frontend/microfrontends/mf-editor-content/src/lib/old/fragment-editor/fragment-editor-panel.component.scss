@@ -1,0 +1,14 @@
+.panel {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  width: 650px;
+  height: 100%;
+  background-color: var(--formBackground);
+}
+
+.panel_padding {
+  position: relative;
+  padding-left: 20px;
+  padding-top: 40px
+}

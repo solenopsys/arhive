@@ -1,0 +1,32 @@
+{
+  "name": "solid-element",
+  "description": "Webcomponents wrapper for Solid",
+  "author": "Ryan Carniato",
+  "license": "MIT",
+  "version": "1.8.0",
+  "homepage": "https://github.com/solidjs/solid/blob/main/packages/solid-element#readme",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rimraf dist/",
+    "build": "pnpm run clean && tsc"
+  },
+  "dependencies": {
+    "component-register": "~0.8.2",
+    "csstype": "^3.1.0",
+    "seroval": "^1.0.3",
+    "seroval-plugins": "^1.0.3"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.8.11"
+  },
+  "devDependencies": {
+    "solid-js": "workspace:*"
+  }
+}

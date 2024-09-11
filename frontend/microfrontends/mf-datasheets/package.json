@@ -1,0 +1,11 @@
+{
+  "name": "@solenopsys/mf-datasheets",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "xs-pack"
+  },
+  "dependencies": {
+    "json5": "^2.2.3",
+    "ng2-pdfjs-viewer": "^15.0.0"
+  }
+}

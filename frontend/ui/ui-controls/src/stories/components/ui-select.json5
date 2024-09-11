@@ -1,0 +1,9 @@
+{
+  "name": "Select",
+  "description": "Select field",
+  "component": "SelectComponent",
+  "package": "@solenopsys/ui-controls",
+  "io": {
+
+  }
+}

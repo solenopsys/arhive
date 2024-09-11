@@ -1,0 +1,63 @@
+# This StatefulSet runs 1 pod with one Zero container and one Alpha container.
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name:  {{ .Values.fullName }}
+spec:
+  serviceName:  {{ .Values.fullName }}
+  replicas: 1
+  selector:
+    matchLabels:
+      app:  {{ .Values.selectorLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.fullName }}
+    spec:
+      containers:
+        - name: {{ .Values.containers.dgraph_zero.name }}
+          image: {{ .Values.containers.dgraph_zero.image }}
+          imagePullPolicy:  {{ .Values.containers.dgraph_zero.pullPolicy }}
+          ports:
+            - containerPort:  {{ .Values.containers.dgraph_zero.grpcPort }}
+              name: grpc-zero
+            - containerPort: {{ .Values.containers.dgraph_zero.httpPort }}
+              name: http-zero
+          volumeMounts:
+            - name: {{ .Values.storage.volumeName }}
+              mountPath: /dgraph
+          command:
+            - bash
+            - "-c"
+            - |
+              set -ex
+              dgraph zero --my=localhost:{{ .Values.containers.dgraph_zero.grpcPort }}
+        - name: {{ .Values.containers.dgraph_alpha.name }}
+          image: {{ .Values.containers.dgraph_alpha.image }}
+          imagePullPolicy: {{ .Values.containers.dgraph_alpha.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.containers.dgraph_alpha.httpPort }}
+              name: http-alpha
+            - containerPort: {{ .Values.containers.dgraph_alpha.grpcPort }}
+              name: grpc-alpha
+          volumeMounts:
+            - name: {{ .Values.storage.volumeName }}
+              mountPath: /dgraph
+          env:
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          command:
+            - bash
+            - "-c"
+            - |
+              set -ex
+              dgraph alpha --my=$(hostname -f):7080 --zero localhost:{{ .Values.containers.dgraph_zero.grpcPort }}
+      terminationGracePeriodSeconds: 60
+      volumes:
+        - name: {{ .Values.storage.volumeName }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.storage.volumeClimeName }}
+  updateStrategy:
+    type: RollingUpdate

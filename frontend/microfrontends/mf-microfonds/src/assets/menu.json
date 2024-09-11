@@ -1,0 +1,13 @@
+[{
+  "name":"Logs",
+  "link":"/logs",
+  "icon":"/assets/icons/11-Content/02-Books/book-book-pages.svg",
+  "items":[
+    {
+      "name":"Cluster",
+      "link":"/logs/cluster",
+      "icon":"/assets/icons/11-Content/01-Content-Creation/content-write.svg"
+    }
+  ]
+}
+]

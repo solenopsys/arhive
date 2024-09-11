@@ -1,0 +1,25 @@
+<input
+  name="myFile"
+  type="file"
+  id="file-upload"
+  (change)="handleFileInput($event.target)"
+/>
+<div style="display: flex">
+  <ui-select
+    [dataProvider]="dp"
+    (valueChange)="valueChange.emit($event)"
+    [value]="value"
+  ></ui-select>
+  <label for="file-upload">
+    <ui-icon-button
+      [icon]="
+        '/assets/icons/05-Internet-Networks-Servers/08-Upload-Download/upload-bottom.svg'
+      "
+    ></ui-icon-button>
+  </label>
+  <ui-icon-button
+    *ngIf="fileToUpload"
+    (click)="uploadFileToActivity()"
+    icon="/assets/icons/01-Interface-Essential/33-Form-Validation/check-1.svg"
+  ></ui-icon-button>
+</div>

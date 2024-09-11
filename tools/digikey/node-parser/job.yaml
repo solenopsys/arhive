@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: digikey-parser
+spec:
+  template:
+    spec:
+      containers:
+        - name: parser
+          image: registry.solenopsys.org/digikey-parser:latest
+          env:
+            - name: CONTROLLER_API
+              value: "http://parser.solenopsys.org"
+      restartPolicy: Never
+  backoffLimit: 0

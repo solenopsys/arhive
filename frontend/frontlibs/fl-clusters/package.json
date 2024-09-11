@@ -1,0 +1,8 @@
+{
+  "name": "@solenopsys/fl-clusters",
+  "version": "0.1.0",
+  "xs": "lib",
+  "scripts": {
+    "build": "ng-packagr -p xs-package.json -c ../../../configurations/typescript/libraries.json"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "List Panel",
+  "description": "List Panel component",
+  "package": "@solenopsys/ui-templates",
+  "component": "ListPanelComponent",
+  "io": {
+
+  }
+}

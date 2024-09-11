@@ -1,0 +1,12 @@
+<div  style="padding: 20px">
+    <ui-select
+            [(value)]="scope"
+            [dataProvider]="dp">
+    </ui-select>
+
+    <button (click)="scopeChange()">Присвоить</button>
+
+    <div *ngFor="let item of items | keyvalue" style="padding: 5px;"> {{item.value[model.conf.nameField]}}</div>
+
+
+</div>

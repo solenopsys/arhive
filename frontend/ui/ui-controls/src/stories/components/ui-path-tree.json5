@@ -1,0 +1,8 @@
+{
+  "name": "PathTree",
+  "description": "Path tree",
+  "component": "PathTreeComponent",
+  "package": "@solenopsys/ui-controls",
+  "io": {
+  }
+}
